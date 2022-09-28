@@ -1,0 +1,173 @@
+.fundo{
+    display: flex;
+    background-color: green;
+    height: 55%;    
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid black;
+    border-bottom: 0px;
+}
+#niwiw{
+    height: 35%;
+    width: 20%;
+    border: 2px solid black;
+    align-self: center;
+}
+#grupo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    height: 35%;
+    width: 70%;
+    align-self: center;
+}
+.membro{
+    height: 55%;
+    width: 20%;
+    border: 2px solid black;
+    margin: 20px;
+}
+.status{
+    text-align: center;
+    font-size: 1.2vw;
+    font-family: Impact;
+}
+#statusniwiw{
+    text-align: center;
+    font-size: 1.5vw;
+    font-family: Impact;
+}
+p{
+    line-height: 1px;
+}
+.painel{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    height: 45%;
+}
+.painel h1{
+    text-align: center;
+    color: white;
+    font-size: 3vw;
+}
+.mostra{
+    display: block;
+}
+.esconde{
+    display: none;
+}
+#acao{
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+#acao h2{
+    width: 10%;
+    margin-left: 45%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#acao h2:hover{
+    color: #51d322;
+    cursor:pointer;
+}
+#magias{
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+#magias h2{
+    width: 10%;
+    margin-left: 45%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#magias h2:hover{
+    color: #51d322;
+    cursor:pointer;
+}
+#selectvlad{
+    background-color: brown;
+    height: 100%;
+    width: 100%;
+}
+#selectvlad h2{
+    width: 10%;
+    margin-left: 45%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#selectvlad h2:hover{
+    color: #51d322;
+    cursor:pointer;
+}
+#confirma{
+    background-color: brown;
+    height: 100%;
+    width: 100%;
+}
+#confirma h2{
+    font-size: 1.9vw;
+    text-align: center;
+    color: white;
+}
+#confirmaacao{
+    width: 10%;
+    margin-left: 45%;
+    text-align: center;
+    color: white;
+}
+#confirmaacao:hover{
+    color: #51d322;;
+    cursor: pointer;
+}
+#negaacao{
+    width: 10%;
+    margin-left: 45%;
+    text-align: center;
+    color: white;
+}
+#negaacao:hover{
+    color: red;
+    cursor: pointer;
+}
+#outcome{
+    background-color: purple;
+    height: 100%;
+    width: 100%;
+}
+#outcome h2{
+    width: 15%;
+    margin-left: 43%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#nome{
+    color: red;
+}
+#magias h1{
+    color: red;
+}
+#selectvlad h1{
+    color: red;
+}
+#voltaalvo:hover{
+    color: red !important;
+}
+#voltamagia:hover{
+    color: red !important; 
+}
+#proximoturno:hover{
+    color: #51d322;
+    cursor: pointer;
+}
+#narracao{
+    padding-top: 10%;
+}
