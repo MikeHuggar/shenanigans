@@ -75,6 +75,22 @@ p{
     color: #51d322;
     cursor:pointer;
 }
+#itens{
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+#itens h2{
+    width: 10%;
+    margin-left: 45%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#itens h2:hover{
+    color: #51d322;
+    cursor:pointer;
+}
 #magias{
     background-color: blue;
     height: 100%;
@@ -91,6 +107,40 @@ p{
     color: #51d322;
     cursor:pointer;
 }
+#semmagia{
+    background-color: blue;
+    height: 69.5%;
+    width: 100%;
+    padding-top: 10%;
+}
+#semitem{
+    background-color: blue;
+    height: 65.9%;
+    width: 100%;
+    padding-top: 10%; 
+}
+#voltasemitem{
+    width: 10%;
+    margin-left: 45%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#voltasemitem:hover{
+    color: #51d322;
+    cursor: pointer;
+}
+#voltasemmagia{
+    width: 10%;
+    margin-left: 45%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#voltasemmagia:hover{
+    color: #51d322;
+    cursor: pointer;
+}
 #selectvlad{
     background-color: brown;
     height: 100%;
@@ -104,6 +154,22 @@ p{
     font-size: 1.9vw;
 }
 #selectvlad h2:hover{
+    color: #51d322;
+    cursor:pointer;
+}
+#alvositem{
+    background-color: brown;
+    height: 100%;
+    width: 100%;
+}
+#alvositem h2{
+    width: 10%;
+    margin-left: 45%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#alvositem h2:hover{
     color: #51d322;
     cursor:pointer;
 }
@@ -152,6 +218,9 @@ p{
 #nome{
     color: red;
 }
+#itens h1{
+    color: red;
+}
 #magias h1{
     color: red;
 }
@@ -164,10 +233,61 @@ p{
 #voltamagia:hover{
     color: red !important; 
 }
+#voltaitem:hover{
+    color: red !important; 
+}
 #proximoturno:hover{
     color: #51d322;
     cursor: pointer;
 }
 #narracao{
     padding-top: 10%;
+}
+#anuncioniwiw{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+#anuncioniwiw h2{
+    width: 15%;
+    margin-left: 43%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#anuncioniwiw h2:hover{
+    color: red;
+    cursor: pointer;
+}
+#turnosniwiw{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+#turnosniwiw h2{
+    width: 15%;
+    margin-left: 43%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#turnosniwiw h2:hover{
+    color: red;
+    cursor: pointer;
+}
+#fimniwiw{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+#fimniwiw h2{
+    width: 15%;
+    margin-left: 43%;
+    text-align: center;
+    color: white;
+    font-size: 1.9vw;
+}
+#fimniwiw h2:hover{
+    color: red;
+    cursor: pointer;
 }
