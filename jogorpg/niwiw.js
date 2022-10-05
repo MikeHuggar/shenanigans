@@ -10,6 +10,7 @@ function mudafoco(){
         document.getElementById("membro4").style.borderColor="black"
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="black"
+        document.getElementById("niwiw").style.borderColor="black"
         document.getElementById("nome").innerText="Timberth"
     }
     if (foco==2){
@@ -19,6 +20,7 @@ function mudafoco(){
         document.getElementById("membro4").style.borderColor="black"
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="black"
+        document.getElementById("niwiw").style.borderColor="black"
         document.getElementById("nome").innerText="Vlad"
     }
     if (foco==3){
@@ -28,6 +30,7 @@ function mudafoco(){
         document.getElementById("membro4").style.borderColor="black"
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="black"
+        document.getElementById("niwiw").style.borderColor="black"
         document.getElementById("nome").innerText="Demoman"
     }
     if (foco==4){
@@ -37,6 +40,7 @@ function mudafoco(){
         document.getElementById("membro4").style.borderColor="red"
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="black"
+        document.getElementById("niwiw").style.borderColor="black"
         document.getElementById("nome").innerText="Spy"
     }
     if (foco==5){
@@ -46,6 +50,7 @@ function mudafoco(){
         document.getElementById("membro4").style.borderColor="black"
         document.getElementById("membro5").style.borderColor="red"
         document.getElementById("membro6").style.borderColor="black"
+        document.getElementById("niwiw").style.borderColor="black"
         document.getElementById("nome").innerText="Sniper"
     }
     if (foco==6){
@@ -55,6 +60,7 @@ function mudafoco(){
         document.getElementById("membro4").style.borderColor="black"
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="red"
+        document.getElementById("niwiw").style.borderColor="black"
         document.getElementById("nome").innerText="Sonic"
     }
     if (foco==7){
@@ -64,6 +70,7 @@ function mudafoco(){
         document.getElementById("membro4").style.borderColor="black"
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="black"
+        document.getElementById("niwiw").style.borderColor="red"
     }
 };
 //aumenta o medidor de magia do personagem ao atacar
@@ -187,13 +194,18 @@ let descricao = document.getElementById("descricao")
 let outcome = document.getElementById("outcome")
 let narracao = document.getElementById("narracao")
 let selectvlad = document.getElementById("selectvlad")
+let alvositem = document.getElementById("alvositem")
 let magias = document.getElementById("magias")
+let menusemmagia = document.getElementById("semmagia")
 let magiastimberth = document.getElementById("magiastimberth")
 let magiasvlad = document.getElementById("magiasvlad")
 let magiasdemo = document.getElementById("magiasdemo")
 let magiasspy = document.getElementById("magiasspy")
 let magiassniper = document.getElementById("magiassniper")
 let magiassonic = document.getElementById("magiassonic")
+let itens = document.getElementById("itens")
+let anuncio = document.getElementById("anuncioniwiw")
+let turnosniwiw = document.getElementById("turnosniwiw")
 //opcoes dos menus
 let ataca = false
 let defesa = false
@@ -218,9 +230,14 @@ let sniper = new Personagem(8000, 100, 0, false)
 let sonic = new Personagem(6000, 100, 0, false)
 let magia1 = false
 let magia2 = false
+let item1 = false
+let item2 = false
+let item1quant = 2
+let item2quant = 2
 let demododge = false
 let spydodge = false
 let sniperreload = false
+let snipertaunt = false
 //acao dos personagens
 //codigo para a funcao de ataques
 document.getElementById("ataque").addEventListener("click",function atacando(){
@@ -252,6 +269,8 @@ document.getElementById("ataque").addEventListener("click",function atacando(){
     magia1 = false
     magia2 = false
     item = false
+    item1 = false
+    item2 = false
     skip = false
 });
 //codigo para defesa
@@ -266,108 +285,202 @@ document.getElementById("defesa").addEventListener("click",function defende(){
     magia1 = false
     magia2 = false
     item = false
+    item1 = false
+    item2 = false
     skip = false
-    descricao.innerText= "Deseja passar esse turno se defendendo? (+20% de magia, -20% de dano sofrido até o próximo turno)"
+    descricao.innerText= "Deseja passar esse turno se defendendo? (+20% de magia)"
+});
+//informa o jogador de que ele não possui MP o suficiente para usar magias
+function semmagia(){
+   menusemmagia.classList.remove("esconde");
+   menusemmagia.classList.add("mostra");
+}
+document.getElementById("voltasemmagia").addEventListener("click", function voltasemmagia(){
+    menusemmagia.classList.remove("mostra");
+    menusemmagia.classList.add("esconde");
+    acao.classList.remove("esconde");
+    acao.classList.add("mostra");
 });
 //mostra o menu de magias correspondente ao personagem
 document.getElementById("magia").addEventListener("click",function menumagia(){
     acao.classList.remove("mostra");
     acao.classList.add("esconde");
-    magias.classList.remove("esconde");
-    magias.classList.add("mostra");
     if(foco==1){
-        magiastimberth.classList.remove("esconde");
-        magiastimberth.classList.add("mostra");
-        magiasvlad.classList.remove("mostra");
-        magiasvlad.classList.add("esconde");
-        magiasdemo.classList.remove("mostra");
-        magiasdemo.classList.add("esconde");
-        magiasspy.classList.remove("mostra");
-        magiasspy.classList.add("esconde");
-        magiassniper.classList.remove("mostra");
-        magiassniper.classList.add("esconde");
-        magiassonic.classList.remove("mostra");
-        magiassonic.classList.add("esconde");
+        if(timberth.magia==100){
+            magias.classList.remove("esconde");
+            magias.classList.add("mostra");
+            magiastimberth.classList.remove("esconde");
+            magiastimberth.classList.add("mostra");
+            magiasvlad.classList.remove("mostra");
+            magiasvlad.classList.add("esconde");
+            magiasdemo.classList.remove("mostra");
+            magiasdemo.classList.add("esconde");
+            magiasspy.classList.remove("mostra");
+            magiasspy.classList.add("esconde");
+            magiassniper.classList.remove("mostra");
+            magiassniper.classList.add("esconde");
+            magiassonic.classList.remove("mostra");
+            magiassonic.classList.add("esconde");
+            ataca = false
+            defesa = false
+            magia = true
+            magia1 = false
+            magia2 = false
+            item = false
+            item1 = false
+            item2 = false
+            skip = false
+        } else {
+            semmagia()
+        }
     }
     if(foco==2){
-        magiastimberth.classList.remove("mostra");
-        magiastimberth.classList.add("esconde");
-        magiasvlad.classList.remove("esconde");
-        magiasvlad.classList.add("mostra");
-        magiasdemo.classList.remove("mostra");
-        magiasdemo.classList.add("esconde");
-        magiasspy.classList.remove("mostra");
-        magiasspy.classList.add("esconde");
-        magiassniper.classList.remove("mostra");
-        magiassniper.classList.add("esconde");
-        magiassonic.classList.remove("mostra");
-        magiassonic.classList.add("esconde");
+        if(vlad.magia==100){
+            magias.classList.remove("esconde");
+            magias.classList.add("mostra");
+            magiastimberth.classList.remove("mostra");
+            magiastimberth.classList.add("esconde");
+            magiasvlad.classList.remove("esconde");
+            magiasvlad.classList.add("mostra");
+            magiasdemo.classList.remove("mostra");
+            magiasdemo.classList.add("esconde");
+            magiasspy.classList.remove("mostra");
+            magiasspy.classList.add("esconde");
+            magiassniper.classList.remove("mostra");
+            magiassniper.classList.add("esconde");
+            magiassonic.classList.remove("mostra");
+            magiassonic.classList.add("esconde");
+            ataca = false
+            defesa = false
+            magia = true
+            magia1 = false
+            magia2 = false
+            item = false
+            item1 = false
+            item2 = false
+            skip = false
+        } else {
+            semmagia()
+        }
     }
     if(foco==3){
-        magiastimberth.classList.remove("mostra");
-        magiastimberth.classList.add("esconde");
-        magiasvlad.classList.remove("mostra");
-        magiasvlad.classList.add("esconde");
-        magiasdemo.classList.remove("esconde");
-        magiasdemo.classList.add("mostra");
-        magiasspy.classList.remove("mostra");
-        magiasspy.classList.add("esconde");
-        magiassniper.classList.remove("mostra");
-        magiassniper.classList.add("esconde");
-        magiassonic.classList.remove("mostra");
-        magiassonic.classList.add("esconde");
+        if(demoman.magia==100){
+            magias.classList.remove("esconde");
+            magias.classList.add("mostra");
+            magiastimberth.classList.remove("mostra");
+            magiastimberth.classList.add("esconde");
+            magiasvlad.classList.remove("mostra");
+            magiasvlad.classList.add("esconde");
+            magiasdemo.classList.remove("esconde");
+            magiasdemo.classList.add("mostra");
+            magiasspy.classList.remove("mostra");
+            magiasspy.classList.add("esconde");
+            magiassniper.classList.remove("mostra");
+            magiassniper.classList.add("esconde");
+            magiassonic.classList.remove("mostra");
+            magiassonic.classList.add("esconde");
+            ataca = false
+            defesa = false
+            magia = true
+            magia1 = false
+            magia2 = false
+            item = false
+            item1 = false
+            item2 = false
+            skip = false
+        } else {
+            semmagia()
+        }
     }
     if(foco==4){
-        magiastimberth.classList.remove("mostra");
-        magiastimberth.classList.add("esconde");
-        magiasvlad.classList.remove("mostra");
-        magiasvlad.classList.add("esconde");
-        magiasdemo.classList.remove("mostra");
-        magiasdemo.classList.add("esconde");
-        magiasspy.classList.remove("esconde");
-        magiasspy.classList.add("mostra");
-        magiassniper.classList.remove("mostra");
-        magiassniper.classList.add("esconde");
-        magiassonic.classList.remove("mostra");
-        magiassonic.classList.add("esconde");
+        if(spy.magia==100){
+            magias.classList.remove("esconde");
+            magias.classList.add("mostra");
+            magiastimberth.classList.remove("mostra");
+            magiastimberth.classList.add("esconde");
+            magiasvlad.classList.remove("mostra");
+            magiasvlad.classList.add("esconde");
+            magiasdemo.classList.remove("mostra");
+            magiasdemo.classList.add("esconde");
+            magiasspy.classList.remove("esconde");
+            magiasspy.classList.add("mostra");
+            magiassniper.classList.remove("mostra");
+            magiassniper.classList.add("esconde");
+            magiassonic.classList.remove("mostra");
+            magiassonic.classList.add("esconde");
+            ataca = false
+            defesa = false
+            magia = true
+            magia1 = false
+            magia2 = false
+            item = false
+            item1 = false
+            item2 = false
+            skip = false
+        } else {
+            semmagia()
+        }
     }
     if(foco==5){
-        magiastimberth.classList.remove("mostra");
-        magiastimberth.classList.add("remove");
-        magiasvlad.classList.remove("mostra");
-        magiasvlad.classList.add("esconde");
-        magiasdemo.classList.remove("mostra");
-        magiasdemo.classList.add("esconde");
-        magiasspy.classList.remove("mostra");
-        magiasspy.classList.add("esconde");
-        magiassniper.classList.remove("esconde");
-        magiassniper.classList.add("mostra");
-        magiassonic.classList.remove("mostra");
-        magiassonic.classList.add("esconde");
+        if(sniper.magia==100){
+            magias.classList.remove("esconde");
+            magias.classList.add("mostra");
+            magiastimberth.classList.remove("mostra");
+            magiastimberth.classList.add("remove");
+            magiasvlad.classList.remove("mostra");
+            magiasvlad.classList.add("esconde");
+            magiasdemo.classList.remove("mostra");
+            magiasdemo.classList.add("esconde");
+            magiasspy.classList.remove("mostra");
+            magiasspy.classList.add("esconde");
+            magiassniper.classList.remove("esconde");
+            magiassniper.classList.add("mostra");
+            magiassonic.classList.remove("mostra");
+            magiassonic.classList.add("esconde");
+            ataca = false
+            defesa = false
+            magia = true
+            magia1 = false
+            magia2 = false
+            item = false
+            item1 = false
+            item2 = false
+            skip = false
+        } else {
+            semmagia()
+        }
     }
     if(foco==6){
-        magiastimberth.classList.remove("mostra");
-        magiastimberth.classList.add("esconde");
-        magiasvlad.classList.remove("mostra");
-        magiasvlad.classList.add("esconde");
-        magiasdemo.classList.remove("mostra");
-        magiasdemo.classList.add("esconde");
-        magiasspy.classList.remove("mostra");
-        magiasspy.classList.add("esconde");
-        magiassniper.classList.remove("mostra");
-        magiassniper.classList.add("esconde");
-        magiassonic.classList.remove("esconde");
-        magiassonic.classList.add("mostra");
+        if(sonic.magia==100){
+            magias.classList.remove("esconde");
+            magias.classList.add("mostra");
+            magiastimberth.classList.remove("mostra");
+            magiastimberth.classList.add("esconde");
+            magiasvlad.classList.remove("mostra");
+            magiasvlad.classList.add("esconde");
+            magiasdemo.classList.remove("mostra");
+            magiasdemo.classList.add("esconde");
+            magiasspy.classList.remove("mostra");
+            magiasspy.classList.add("esconde");
+            magiassniper.classList.remove("mostra");
+            magiassniper.classList.add("esconde");
+            magiassonic.classList.remove("esconde");
+            magiassonic.classList.add("mostra");
+            ataca = false
+            defesa = false
+            magia = true
+            magia1 = false
+            magia2 = false
+            item = false
+            item1 = false
+            item2 = false
+            skip = false
+        } else {
+            semmagia()
+        }
     }
-    ataca = false
-    defesa = false
-    magia = true
-    magia1 = false
-    magia2 = false
-    item = false
-    skip = false
 });
-//descreve o efeito da magia para o jogador na escolha
+//descreve o efeito da magia para o jogador ao escolher
 document.getElementById("descarregar").addEventListener("click",function magiatimberth1(){
     magias.classList.remove("mostra");
     magias.classList.add("esconde");
@@ -406,7 +519,7 @@ document.getElementById("eyelander").addEventListener("click", function magiadem
     confirma.classList.remove("esconde");
     confirma.classList.add("mostra");
     magia1 = true
-    descricao.innerText= "Demoman atacará Niwiw com sua espada, a Eyelander (300 de dano, +500 de vida para Demoman)."
+    descricao.innerText= "Demoman atacará Niwiw com sua espada, a Eyelander (300 de dano, +500 de vida para Demoman e irá usar somente 50% de seu MP)."
 });
 document.getElementById("sticky").addEventListener("click", function magiademo2(){
     magias.classList.remove("mostra");
@@ -427,18 +540,18 @@ document.getElementById("invis").addEventListener("click", function magiaspy1(){
 document.getElementById("faca").addEventListener("click", function magiaspy2(){
     magias.classList.remove("mostra");
     magias.classList.add("esconde");
-    confirma.classList.remove("esconde");
     confirma.classList.add("mostra");
+    confirma.classList.remove("esconde");
     magia2 = true
-    descricao.innerText= "Spy irá tentar esfaquear Niwiw pelas costas. Uma tarefa difícil, mas com retorno proporcional ao risco (Acerto garantido caso Spy esteja invisível)."
+    descricao.innerText= "Spy irá tentar esfaquear Niwiw pelas costas. Uma tarefa difícil, mas com retorno proporcional ao risco."
 });
-document.getElementById("jarate").addEventListener("click", function magiasniper1(){
+document.getElementById("megatiro").addEventListener("click", function magiasniper1(){
     magias.classList.remove("mostra");
     magias.classList.add("esconde");
     confirma.classList.remove("esconde");
     confirma.classList.add("mostra");
     magia1 = true
-    descricao.innerText= "Sniper irá tentar lançar um jarro com líquido corrosivo em Niwiw, diminuindo suas defesas caso acerte."
+    descricao.innerText= "Sniper carregar um tiro mais poderoso que o normal, causando 4000 de dano."
 });
 document.getElementById("provocacao").addEventListener("click", function magiasniper2(){
     magias.classList.remove("mostra");
@@ -479,6 +592,8 @@ document.getElementById("alvotimberth").addEventListener("click", function alvot
         narracao.innerText= "Timberth agora está sobre os efeitos da ADRENALINA!"
         timberth.adrenalina=true
     }
+    vlad.magia=0
+    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
 });
 document.getElementById("alvovlad").addEventListener("click", function alvovlad(){
     selectvlad.classList.remove("mostra");
@@ -494,6 +609,8 @@ document.getElementById("alvovlad").addEventListener("click", function alvovlad(
         narracao.innerText= "Vlad agora está sobre os efeitos da ADRENALINA!"
         vlad.adrenalina=true
     }
+    vlad.magia=0
+    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
 });
 document.getElementById("alvodemo").addEventListener("click", function alvodemo(){
     selectvlad.classList.remove("mostra");
@@ -509,6 +626,8 @@ document.getElementById("alvodemo").addEventListener("click", function alvodemo(
         narracao.innerText= "Demoman agora está sobre os efeitos da ADRENALINA!"
         demoman.adrenalina=true
     }
+    vlad.magia=0
+    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
 });
 document.getElementById("alvospy").addEventListener("click", function alvospy(){
     selectvlad.classList.remove("mostra");
@@ -524,6 +643,8 @@ document.getElementById("alvospy").addEventListener("click", function alvospy(){
         narracao.innerText= "Spy agora está sobre os efeitos da ADRENALINA!"
         spy.adrenalina=true
     }
+    vlad.magia=0
+    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
 });
 document.getElementById("alvosniper").addEventListener("click", function alvosniper(){
     selectvlad.classList.remove("mostra");
@@ -539,6 +660,8 @@ document.getElementById("alvosniper").addEventListener("click", function alvosni
         narracao.innerText= "Sniper agora está sobre os efeitos da ADRENALINA!"
         sniper.adrenalina=true
     }
+    vlad.magia=0
+    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
 });
 document.getElementById("alvosonic").addEventListener("click", function alvosonic(){
     selectvlad.classList.remove("mostra");
@@ -554,6 +677,211 @@ document.getElementById("alvosonic").addEventListener("click", function alvosoni
         narracao.innerText= "Sonic agora está sobre os efeitos da ADRENALINA!"
         sonic.adrenalina=true
     }
+    vlad.magia=0
+    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
+});
+//mostra o menu de itens para o jogador ao clicar na aba de itens
+document.getElementById("item").addEventListener("click", function selectitem(){
+    acao.classList.remove("mostra");
+    acao.classList.add("esconde");
+    itens.classList.remove("esconde");
+    itens.classList.add("mostra");
+});
+document.getElementById("voltaitem").addEventListener("click", function voltaitem(){
+    itens.classList.remove("mostra");
+    itens.classList.add("esconde");
+    acao.classList.remove("esconde");
+    acao.classList.add("mostra");
+    item = false
+    item1 = false
+    item2 = false
+});
+document.getElementById("voltasemitem").addEventListener("click", function voltasemitem(){
+    semitem.classList.remove("mostra");
+    semitem.classList.add("esconde");
+    acao.classList.remove("esconde");
+    acao.classList.add("mostra");
+    item = false
+    item1 = false
+    item2 = false
+});
+//selecao de alvo para itens
+document.getElementById("pocao").addEventListener("click", function usapocao(){
+    if(item1quant>0){
+        itens.classList.remove("mostra");
+        itens.classList.add("esconde");
+        confirma.classList.remove("esconde");
+        confirma.classList.add("mostra");
+        descricao.innerText= "Esta poção irá curar um alvo de sua escolha em 3000 pontos de vida."
+        item = true
+        item1 = true
+    } else {
+        itens.classList.remove("mostra");
+        itens.classList.add("esconde");
+        semitem.classList.remove("esconde");
+        semitem.classList.add("mostra");
+    }
+});
+document.getElementById("mana").addEventListener("click", function usamana(){
+    if(item2quant>0){
+        itens.classList.remove("mostra");
+        itens.classList.add("esconde");
+        confirma.classList.remove("esconde");
+        confirma.classList.add("mostra");
+        descricao.innerText= "Esta poção irá encher o medidor de mana de um alvo de sua escolha."
+        item = true
+        item2 = true
+    } else {
+        itens.classList.remove("mostra");
+        itens.classList.add("esconde");
+        semitem.classList.remove("esconde");
+        semitem.classList.add("mostra");
+    }
+});
+//aplica os efeitos dos itens
+document.getElementById("itemtimberth").addEventListener("click", function itemtimberth(){
+    alvositem.classList.remove("mostra");
+    alvositem.classList.add("esconde");
+    outcome.classList.remove("esconde");
+    outcome.classList.add("mostra");
+    if(item1==true){
+        narracao.innerText = "Timberth recebeu 3000 pontos de vida!"
+        timberth.vida = timberth.vida+3000
+        document.getElementById("hptimberth").innerText = "HP: " + timberth.vida
+        item = false
+        item1 = false
+        item1quant--
+        document.getElementById("pocao").innerText = "Poção de cura (x" + item1quant + ")"
+    }
+    if(item2==true){
+        narracao.innerText = "Timberth está com seu medidor de magia cheio!"
+        timberth.magia = 100
+        document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+        item = false
+        item2 = false
+        item2quant--
+        document.getElementById("mana").innerText = "Poção de mana (x" + item2quant + ")"
+    }
+});
+document.getElementById("itemvlad").addEventListener("click", function itemvlad(){
+    alvositem.classList.remove("mostra");
+    alvositem.classList.add("esconde");
+    outcome.classList.remove("esconde");
+    outcome.classList.add("mostra");
+    if(item1==true){
+        narracao.innerText = "Vlad recebeu 3000 pontos de vida!"
+        vlad.vida = vlad.vida+3000
+        document.getElementById("hpvlad").innerText = "HP: " + vlad.vida
+        item = false
+        item1 = false
+        item1quant--
+        document.getElementById("pocao").innerText = "Poção de cura (x" + item1quant + ")"
+    }
+    if(item2==true){
+        narracao.innerText = "Vlad está com seu medidor de magia cheio!"
+        vlad.magia = 100
+        document.getElementById("mpvlad").innerText = "MP: " + vlad.magia + "%"
+        item = false
+        item2 = false
+        item2quant--
+        document.getElementById("mana").innerText = "Poção de mana (x" + item2quant + ")"
+    }
+});
+document.getElementById("itemdemo").addEventListener("click", function itemdemo(){
+    alvositem.classList.remove("mostra");
+    alvositem.classList.add("esconde");
+    outcome.classList.remove("esconde");
+    outcome.classList.add("mostra");
+    if(item1==true){
+        narracao.innerText = "Demoman recebeu 3000 pontos de vida!"
+        demoman.vida = demoman.vida+3000
+        document.getElementById("hpdemo").innerText = "HP: " + demoman.vida
+        item = false
+        item1 = false
+        item1quant--
+        document.getElementById("pocao").innerText = "Poção de cura (x" + item1quant + ")"
+    }
+    if(item2==true){
+        narracao.innerText = "Demoman está com seu medidor de magia cheio!"
+        demoman.magia = 100
+        document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
+        item = false
+        item2 = false
+        item2quant--
+        document.getElementById("mana").innerText = "Poção de mana (x" + item2quant + ")"
+    }
+});
+document.getElementById("itemspy").addEventListener("click", function itemspy(){
+    alvositem.classList.remove("mostra");
+    alvositem.classList.add("esconde");
+    outcome.classList.remove("esconde");
+    outcome.classList.add("mostra");
+    if(item1==true){
+        narracao.innerText = "Spy recebeu 3000 pontos de vida!"
+        spy.vida = spy.vida+3000
+        document.getElementById("hpspy").innerText = "HP: " + spy.vida
+        item = false
+        item1 = false
+        item1quant--
+        document.getElementById("pocao").innerText = "Poção de cura (x" + item1quant + ")"
+    }
+    if(item2==true){
+        narracao.innerText = "Spy está com seu medidor de magia cheio!"
+        spy.magia = 100
+        document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
+        item = false
+        item2 = false
+        item2quant--
+        document.getElementById("mana").innerText = "Poção de mana (x" + item2quant + ")"
+    }
+});
+document.getElementById("itemsniper").addEventListener("click", function itemsniper(){
+    alvositem.classList.remove("mostra");
+    alvositem.classList.add("esconde");
+    outcome.classList.remove("esconde");
+    outcome.classList.add("mostra");
+    if(item1==true){
+        narracao.innerText = "Sniper recebeu 3000 pontos de vida!"
+        sniper.vida = sniper.vida+3000
+        document.getElementById("hpsniper").innerText = "HP: " + sniper.vida
+        item = false
+        item1 = false
+        item1quant--
+        document.getElementById("pocao").innerText = "Poção de cura (x" + item1quant + ")"
+    }
+    if(item2==true){
+        narracao.innerText = "Sniper está com seu medidor de magia cheio!"
+        sniper.magia = 100
+        document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
+        item = false
+        item2 = false
+        item2quant--
+        document.getElementById("mana").innerText = "Poção de mana (x" + item2quant + ")"
+    }
+});
+document.getElementById("itemsonic").addEventListener("click", function itemsonic(){
+    alvositem.classList.remove("mostra");
+    alvositem.classList.add("esconde");
+    outcome.classList.remove("esconde");
+    outcome.classList.add("mostra");
+    if(item1==true){
+        narracao.innerText = "Sonic recebeu 3000 pontos de vida!"
+        sonic.vida = sonic.vida+3000
+        document.getElementById("hpsonic").innerText = "HP: " + sonic.vida
+        item = false
+        item1 = false
+        item1quant--
+        document.getElementById("pocao").innerText = "Poção de cura (x" + item1quant + ")"
+    }
+    if(item2==true){
+        narracao.innerText = "Sonic está com seu medidor de magia cheio!"
+        sonic.magia = 100
+        document.getElementById("mpsonic").innerText = "MP: " + sonic.magia + "%"
+        item = false
+        item2 = false
+        item2quant--
+        document.getElementById("mana").innerText = "Poção de mana (x" + item2quant + ")"
+    }
 });
 //codigo para pular o turno
 document.getElementById("pulaturno").addEventListener("click", function pulaturno(){
@@ -567,6 +895,8 @@ document.getElementById("pulaturno").addEventListener("click", function pulaturn
     magia1 = false
     magia2 = false
     item = false
+    item1 = false
+    item2 = false
     skip=true
     descricao.innerText= "Deseja passar esse turno descansando? (+500 pontos de vida)"
 });
@@ -575,7 +905,9 @@ document.getElementById("negaacao").addEventListener("click",function voltaselec
     confirma.classList.remove("mostra");
     confirma.classList.add("esconde");
     magias.classList.remove("mostra");
-    magias.classList.add("esconde") ; 
+    magias.classList.add("esconde") ;
+    itens.classList.remove("mostra");
+    itens.classList.add("esconde"); 
     acao.classList.remove("esconde");
     acao.classList.add("mostra");
     ataca = false
@@ -584,6 +916,8 @@ document.getElementById("negaacao").addEventListener("click",function voltaselec
     magia1 = false
     magia2 = false
     item = false
+    item1 = false
+    item2 = false
     skip = false
 });
 document.getElementById("voltamagia").addEventListener("click",function voltamagia(){
@@ -595,18 +929,24 @@ document.getElementById("voltamagia").addEventListener("click",function voltamag
     magia1 = false
     magia2 = false
 });
+//determina o que ocorre de acordo com a acao escolhida pelo jogador
 document.getElementById("confirmaacao").addEventListener("click",function confirmaselecao(){
     confirma.classList.remove("mostra");
     confirma.classList.add("esconde");
     outcome.classList.remove("esconde");
     outcome.classList.add("mostra");
     //faz uma checagem baseada na precisao do personagem para ver se o ataque vai acertar
-    // personagens que nao tem precisao sempre acertam
     if (ataca==true && foco==1){
         acerto=Math.floor(Math.random()*100)+1
         if (acerto<=timberth.precisao){
-            narracao.innerText= "Niwiw é baleado, levando 200 de dano!"
-            niwiw.vida = niwiw.vida-200
+            if(timberth.adrenalina==true){
+                narracao.innerText= "Niwiw é baleado, levando 400 de dano!"
+                niwiw.vida = niwiw.vida-400
+                timberth.adrenalina = false
+            } else {
+                narracao.innerText= "Niwiw é baleado, levando 200 de dano!"
+                niwiw.vida = niwiw.vida-200
+            }
             document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
             aumentamagia()
         } else {
@@ -616,8 +956,14 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
     if (ataca==true && foco==2){
         acerto=Math.floor(Math.random()*100)+1
         if (acerto<=vlad.precisao){
-            narracao.innerText= "Niwiw foi socado, levando 100 de dano!"
-            niwiw.vida = niwiw.vida-100
+            if(vlad.adrenalina==true){
+                narracao.innerText= "Niwiw foi socado, levando 200 de dano!"
+                niwiw.vida = niwiw.vida-200 
+                vlad.adrenalina = false
+            } else {
+                narracao.innerText= "Niwiw foi socado, levando 100 de dano!"
+                niwiw.vida = niwiw.vida-100
+            }
             document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
             aumentamagia()
         } else {
@@ -627,21 +973,39 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
     if (ataca==true && foco==3){
         acerto=Math.floor(Math.random()*100)+1
         if (acerto<=demoman.precisao){
-            narracao.innerText= "A granada faz contato, causando 500 de dano em Niwiw!"
-            niwiw.vida = niwiw.vida-500
+            if(demoman.adrenalina==true){
+                narracao.innerText= "A granada faz contato, causando 1000 de dano em Niwiw!"
+                niwiw.vida = niwiw.vida-1000
+                demoman.adrenalina = false
+            } else {
+                narracao.innerText= "A granada faz contato, causando 500 de dano em Niwiw!"
+                niwiw.vida = niwiw.vida-500
+            }
             document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
             aumentamagia()
         } else {
-            narracao.innerText= "Apesar da granada não ter atingido Niwiw, ela explode perto o suficiente para causar 100 de dano!"
-            niwiw.vida = niwiw.vida-100
+            if(demoman.adrenalina==true){
+                narracao.innerText= "Apesar da granada não ter atingido Niwiw, ela explode perto o suficiente para causar 200 de dano!"
+                niwiw.vida = niwiw.vida-200
+                demoman.adrenalina = false
+            } else {
+                narracao.innerText= "Apesar da granada não ter atingido Niwiw, ela explode perto o suficiente para causar 100 de dano!"
+                niwiw.vida = niwiw.vida-100
+            }
             document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
         }
     }    
     if (ataca==true && foco==4){
         acerto=Math.floor(Math.random()*100)+1
         if (acerto<=vlad.precisao){
-            narracao.innerText= "Niwiw é baleado, levando 200 de dano!"
-            niwiw.vida = niwiw.vida-200
+            if(spy.adrenalina==true){
+                narracao.innerText= "Niwiw é baleado, levando 400 de dano!"
+                niwiw.vida = niwiw.vida-400
+                spy.adrenalina = false
+            } else {
+                narracao.innerText= "Niwiw é baleado, levando 200 de dano!"
+                niwiw.vida = niwiw.vida-200
+            }
             document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
             aumentamagia()
         } else {
@@ -650,8 +1014,14 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
     }
     if (ataca==true && foco==5){
         if(sniperreload==false) {
-            narracao.innerText= "Tiro certeiro! Niwiw leva 1000 de dano!"
-            niwiw.vida = niwiw.vida-1000
+            if(sniper.adrenalina==true){
+                narracao.innerText= "Tiro certeiro! Niwiw leva 2000 de dano!"
+                niwiw.vida = niwiw.vida-2000
+                sniper.adrenalina = false
+            } else {
+                narracao.innerText= "Tiro certeiro! Niwiw leva 1000 de dano!"
+                niwiw.vida = niwiw.vida-1000
+            }
             document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
             aumentamagia()
             sniperreload=true
@@ -661,8 +1031,14 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
         }
     }
     if (ataca==true && foco==6){
-        narracao.innerText= "Niwiw é atingido, levando 100 de dano!"
-        niwiw.vida = niwiw.vida-100
+        if(sonic.adrenalina==true){
+            narracao.innerText= "Niwiw é atingido, levando 200 de dano!"
+            niwiw.vida = niwiw.vida-200
+            sonic.adrenalina = false
+        } else {
+            narracao.innerText= "Niwiw é atingido, levando 100 de dano!"
+            niwiw.vida = niwiw.vida-100
+        }
         document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
         aumentamagia()
     }
@@ -704,14 +1080,31 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             tiros++
         }
         danoniwiw = tirosacertados*200
+        if(timberth.adrenalina==true){
+            danoniwiw = danoniwiw*2
+            timberth.adrenalina = false
+        }
         niwiw.vida = niwiw.vida-danoniwiw
         document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
         narracao.innerText= "Timberth acertou "+ tirosacertados + " tiro(s), causando um total de "+ danoniwiw + " de dano à Niwiw."
+        timberth.magia=0
+        document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
     }
     if (magia==true && magia2==true && foco==1){
-        niwiw.vida = niwiw.vida-700
-        document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
-        narracao.innerText= "A estrutura atômica de Niwiw foi levemente desestabilizada, lhe causando 700 de dano!"
+        if(timberth.adrenalina==true){
+            niwiw.vida = niwiw.vida-1400
+            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            narracao.innerText= "A estrutura atômica de Niwiw foi levemente desestabilizada, lhe causando 1400 de dano!"
+            timberth.magia=0
+            document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+            timberth.adrenalina = false
+        } else {
+            niwiw.vida = niwiw.vida-700
+            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            narracao.innerText= "A estrutura atômica de Niwiw foi levemente desestabilizada, lhe causando 700 de dano!"
+            timberth.magia=0
+            document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+        }
     }
     if (magia==true && foco==2){
         outcome.classList.remove("mostra");
@@ -721,47 +1114,108 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
     }
     if (magia==true && magia1==true && foco==3){
         niwiw.vida = niwiw.vida-300
+        if(demoman.adrenalina==true){
+            niwiw.vida = niwiw.vida-300
+        }
         demoman.vida = demoman.vida+500
         document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
         document.getElementById("hpdemo").innerText = "HP: " + demoman.vida
-        narracao.innerText= "Demoman atinge Niwiw com a sua Eyelander, causando 300 de dano e roubando um pouco de sua vitalidade!"
+        if(demoman.adrenalina==true){
+            narracao.innerText= "Demoman atinge Niwiw com a sua Eyelander, causando 600 de dano e roubando um pouco de sua vitalidade!"
+            demoman.adrenalina = false
+        } else {
+            narracao.innerText= "Demoman atinge Niwiw com a sua Eyelander, causando 300 de dano e roubando um pouco de sua vitalidade!"
+        }
+        demoman.magia=50
+        document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
     }
     if(magia==true && magia2==true && foco==3){
         demododge==true
         narracao.innerText= "Demoman ficará nos ares até o próximo turno!"
+        demoman.magia=0
+        document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
     }
     if(magia==true && magia1==true && foco==4){
         spydodge=true
         narracao.innerText= "Spy ficou invisível."
-        console.log("ta invisivel")
+        spy.magia=0
+        document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
     }
     if(magia==true && magia2==true && foco==4){
-        acerto=Math.floor(Math.random()*100)+1
-        if(acerto<=spy.precisao-70 || spydodge==true){
+        if(spydodge==true){
             niwiw.vida = niwiw.vida-5000
+            if(spy.adrenalina==true){
+                niwiw.vida = niwiw.vida-5000
+            }
             document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
-            narracao.innerText= "Spy consegue esfaquear Niwiw, causando 5000 pontos de dano! Ele sentiu essa, com certeza."
+            if(spy.adrenalina==true){
+                narracao.innerText= "Spy consegue esfaquear Niwiw, causando 10000 pontos de dano! Vai ser difícil se recuperar dessa, hein?."
+                spy.adrenalina =false
+            } else {
+                narracao.innerText= "Spy consegue esfaquear Niwiw, causando 5000 pontos de dano! Ele sentiu essa, com certeza."
+            }
             spydodge==false
         } else {
-            narracao.innerText= "Spy foi avistado por Niwiw e foi obrigado a recuar."
+            acerto=Math.floor(Math.random()*100)+1
+            if(acerto<=spy.precisao-70){
+                niwiw.vida = niwiw.vida-5000
+                if(spy.adrenalina==true){
+                    niwiw.vida = niwiw.vida-5000
+                }
+                document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+                if(spy.adrenalina==true){
+                    narracao.innerText= "Spy consegue esfaquear Niwiw, causando 10000 pontos de dano! Vai ser difícil se recuperar dessa, hein?."
+                    spy.adrenalina =false
+                } else {
+                    narracao.innerText= "Spy consegue esfaquear Niwiw, causando 5000 pontos de dano! Ele sentiu essa, com certeza."
+                }
+            } else {
+                narracao.innerText= "Spy foi avistado por Niwiw e foi obrigado a recuar."
+            }
         }
+        spy.magia=0
+        document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
     }
     if(magia==true && magia1==true && foco==5){
         acerto=Math.floor(Math.random()*100)+1
         if(acerto<=sniper.precisao-20){
-            niwiw.jarrate=true
-            narracao.innerText= "O jarro atinge Niwiw, deixando-o ensopado no líquido corrosivo!"
+            niwiw.vida = niwiw.vida-4000
+            if(sniper.adrenalina==true){
+                niwiw.vida = niwiw.vida-4000
+            }
+            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            if(sniper.adrenalina==true){
+                narracao.innerText= "Sniper acerta o tiro, causando 8000 de dano!"
+                sniper.adrenalina = false
+            } else {
+                narracao.innerText= "Sniper acerta o tiro, causando 4000 de dano!"
+            }
         } else {
-            narracao.innerText= "Sniper errou o arremesso."
+            narracao.innerText= "Sniper errou o tiro"
         }
+        sniper.magia=0
+        document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
     }
     if(magia==true && magia2==true && foco==5){
         narracao.innerText= "Niwiw voltou sua atenção para Sniper."
+        sniper.magia = 0
+        snipertaunt = true
+        document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
     }
     if(magia==true && magia1==true && foco==6){
         niwiw.vida = niwiw.vida-800
+        if(sonic.adrenalina==true){
+            niwiw.vida = niwiw.vida-800
+        }
         document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
-        narracao.innerText= "Sonic inflige 800 pontos de dano à Niwiw!"
+        if(sonic.adrenalina==true){
+            narracao.innerText= "Sonic inflige 1600 pontos de dano à Niwiw!"
+            sonic.adrenalina = false
+        } else {
+            narracao.innerText= "Sonic inflige 800 pontos de dano à Niwiw!"
+        }
+        sonic.magia=0
+        document.getElementById("mpsonic").innerText = "MP: " + sonic.magia + "%"
     }
     if(magia==true && magia2==true && foco==6){
         acerto=Math.floor(Math.random()*100)+1
@@ -769,8 +1223,16 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             niwiw.chaos=true
             narracao.innerText= "Niwiw foi imobilizado! Ele será obrigado a pular seu próximo turno."
         } else {
-            narracao.innerText= "O poder da Esmeralda parece não funcionar em Niwiw."
+            narracao.innerText= "O poder da Esmeralda parece não ter funcionado em Niwiw."
         }
+        sonic.magia=0
+        document.getElementById("mpsonic").innerText = "MP: " + sonic.magia + "%"
+    }
+    if(item==true){
+        outcome.classList.remove("mostra");
+        outcome.classList.add("esconde");
+        alvositem.classList.remove("esconde");
+        alvositem.classList.add("mostra");
     }
     if(skip==true && foco==1){
         timberth.vida = timberth.vida+500
@@ -808,10 +1270,195 @@ document.getElementById("proximoturno").addEventListener("click",function mudatu
     outcome.classList.add("esconde");
     acao.classList.remove("esconde");
     acao.classList.add("mostra");
-    if (foco<6){
-        foco++
-    } else {
-        foco = 1
+    foco++
+    if(foco==7){
+        acao.classList.remove("mostra");
+        acao.classList.add("esconde");
+        anuncio.classList.remove("esconde");
+        anuncio.classList.add("mostra");
     }
     mudafoco()
+});
+//codigos para os ataques de niwiw
+let ataquesniwiw = 0
+let niwiwataca = 0
+//alvocolateral determina quem sofrerá dano além do alvo principal de niwiw
+let alvocolateral = 0
+//furia é uma variavel que aumenta em meio ponto a cada turno do niwiw. foi criada com a intençao de fazer uma batalha progressivamente mais difícil
+let furia = 1
+function niwiwataque(){
+    danoniwiw = (600*furia)*ataquesniwiw
+    if(niwiwataca==1){
+        timberth.vida = timberth.vida-danoniwiw
+        if(alvocolateral==1){
+            vlad.vida = vlad.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Timberth! E ainda acabou sobrando pro Vlad..."
+        }
+        if(alvocolateral==2){
+            demoman.vida = demoman.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Timberth! E ainda acabou sobrando pro Demoman..."
+        }
+        if(alvocolateral==3){
+            spy.vida = spy.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Timberth! E ainda acabou sobrando pro Spy..."
+        }
+        if(alvocolateral==4){
+            sniper.vida = sniper.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Timberth! E ainda acabou sobrando pro Sniper..."
+        }
+        if(alvocolateral==5){
+            sonic.vida = sonic.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Timberth! E ainda acabou sobrando pro Sonic..."
+        }
+    }
+    if(niwiwataca==2){
+        vlad.vida = vlad.vida-danoniwiw
+        if(alvocolateral==1){
+            timberth.vida = timberth.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Vlad! E ainda acabou sobrando pro Timberth..."
+        }
+        if(alvocolateral==2){
+            demoman.vida = demoman.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Vlad! E ainda acabou sobrando pro Demoman..."
+        }
+        if(alvocolateral==3){
+            spy.vida = spy.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Vlad! E ainda acabou sobrando pro Spy..."
+        }
+        if(alvocolateral==4){
+            sniper.vida = sniper.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Vlad! E ainda acabou sobrando pro Sniper..."
+        }
+        if(alvocolateral==5){
+            sonic.vida = sonic.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Vlad! E ainda acabou sobrando pro Sonic..."
+        }
+    }
+    if(niwiwataca==3){
+        demoman.vida = demoman.vida-danoniwiw
+        if(alvocolateral==1){
+            timberth.vida = timberth.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Timberth..."
+        }
+        if(alvocolateral==2){
+            vlad.vida = vlad.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Vlad..."
+        }
+        if(alvocolateral==3){
+            spy.vida = spy.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Spy..."
+        }
+        if(alvocolateral==4){
+            sniper.vida = sniper.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Sniper..."
+        }
+        if(alvocolateral==5){
+            sonic.vida = sonic.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Sonic..."
+        }
+    }
+    if(niwiwataca==4){
+        spy.vida = spy.vida-danoniwiw
+        if(alvocolateral==1){
+            timberth.vida = timberth.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Timberth..."
+        }
+        if(alvocolateral==2){
+            vlad.vida = vlad.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Vlad..."
+        }
+        if(alvocolateral==3){
+            demoman.vida = demoman.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Demoman..."
+        }
+        if(alvocolateral==4){
+            sniper.vida = sniper.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Sniper..."
+        }
+        if(alvocolateral==5){
+            sonic.vida = sonic.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Sonic..."
+        }
+    }
+    if(niwiwataca==5){
+        sniper.vida = sniper.vida-danoniwiw
+        if(alvocolateral==1){
+            timberth.vida = timberth.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sniper! E ainda acabou sobrando pro Timberth..."
+        }
+        if(alvocolateral==2){
+            vlad.vida = vlad.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sniper! E ainda acabou sobrando pro Vlad..."
+        }
+        if(alvocolateral==3){
+            demoman.vida = demoman.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sniper! E ainda acabou sobrando pro Demoman..."
+        }
+        if(alvocolateral==4){
+            spy.vida = spy.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sniper! E ainda acabou sobrando pro Spy..."
+        }
+        if(alvocolateral==5){
+            sonic.vida = sonic.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sniper! E ainda acabou sobrando pro Sonic..."
+        }
+    }
+    if(niwiwataca==6){
+        sonic.vida = sonic.vida-danoniwiw
+        if(alvocolateral==1){
+            timberth.vida = timberth.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sonic! E ainda acabou sobrando pro Timberth..."
+        }
+        if(alvocolateral==2){
+            vlad.vida = vlad.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sonic! E ainda acabou sobrando pro Vlad..."
+        }
+        if(alvocolateral==3){
+            demoman.vida = demoman.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sonic! E ainda acabou sobrando pro Demoman..."
+        }
+        if(alvocolateral==4){
+            spy.vida = spy.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sonic! E ainda acabou sobrando pro Spy..."
+        }
+        if(alvocolateral==5){
+            sniper.vida = sniper.vida-(danoniwiw/2)
+            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sonic! E ainda acabou sobrando pro Sniper..."
+        }
+    }
+    document.getElementById("hptimberth").innerText = "HP: " + timberth.vida
+    document.getElementById("hpvlad").innerText = "HP: " + vlad.vida
+    document.getElementById("hpdemo").innerText = "HP: " + demoman.vida
+    document.getElementById("hpspy").innerText = "HP: " + spy.vida
+    document.getElementById("hpsniper").innerText = "HP: " + sniper.vida
+    document.getElementById("hpsonic").innerText = "HP: " + sonic.vida
+};
+document.getElementById("proximoniwiw").addEventListener("click", function proximoniwiw(){
+    anuncio.classList.remove("mostra");
+    anuncio.classList.add("esconde");
+    turnosniwiw.classList.remove("esconde");
+    turnosniwiw.classList.add("mostra")
+    niwiwataca=Math.floor(Math.random()*6)+1
+    alvocolateral=Math.floor(Math.random()*5)+1
+    ataquesniwiw=Math.floor(Math.random()*3)+1
+    if(niwiwataca==1){
+        document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Timberth " + ataquesniwiw + " vez(es)!"
+    }
+    if(niwiwataca==2){
+        document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Vlad " + ataquesniwiw + " vez(es)!"
+    }
+    if(niwiwataca==3){
+        document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Demoman " + ataquesniwiw + " vez(es)!"
+    }
+    if(niwiwataca==4){
+        document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Spy " + ataquesniwiw + " vez(es)!"
+    }
+    if(niwiwataca==5){
+        document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Sniper " + ataquesniwiw + " vez(es)!"
+    }
+    if(niwiwataca==6){
+        document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Sonic " + ataquesniwiw + " vez(es)!"
+    }
+    niwiwataque()
+    furia = furia+0.5  
 });
