@@ -108,7 +108,7 @@ function aumentamagia(){
             document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
         } else {
             spy.magia = 100
-            document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
+            document.getElementById("mpspyh").innerText = "MP: " + spy.magia + "%"
         }
     }
     if(foco==5){
@@ -165,7 +165,7 @@ function aumentamagiadefesa(){
             document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
         } else {
             spy.magia = 100
-            document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
+            document.getElementById("mpspyh").innerText = "MP: " + spy.magia + "%"
         }
     }
     if(foco==5){
@@ -207,6 +207,8 @@ let itens = document.getElementById("itens")
 let anuncio = document.getElementById("anuncioniwiw")
 let turnosniwiw = document.getElementById("turnosniwiw")
 let fimniwiw = document.getElementById("fimniwiw")
+let gameover = document.getElementById("gameover")
+let parabens = document.getElementById("parabens")
 //opcoes dos menus
 let ataca = false
 let defesa = false
@@ -1287,14 +1289,23 @@ document.getElementById("proximoturno").addEventListener("click",function mudatu
     if(foco==6 && sonic.vida<=0){
         foco++
     }
-    if(foco==7 && niwiw.vida>0){
-        acao.classList.remove("mostra");
-        acao.classList.add("esconde");
-        anuncio.classList.remove("esconde");
-        anuncio.classList.add("mostra");
-    }
-    if(foco==7 && niwiw.vida<=0){
-        alert("Após uma árdura batalha, nossos heróis venceram o tenebroso Niwiw! Parabéns!")
+    if(foco==7){
+        if(niwiw.chaos==true){
+            foco=1
+            niwiw.chaos = false
+        } else {
+            if(niwiw.vida>0){
+                acao.classList.remove("mostra");
+                acao.classList.add("esconde");
+                anuncio.classList.remove("esconde");
+                anuncio.classList.add("mostra");
+            } else {
+                acao.classList.remove("mostra");
+                acao.classList.add("esconde");
+                parabens.classList.remove("esconde");
+                parabens.classList.add("mostra");
+            }
+        }
     }
     mudafoco()
 });
@@ -1489,7 +1500,7 @@ document.getElementById("proximoniwiw").addEventListener("click", function proxi
         document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Sonic " + ataquesniwiw + " vez(es)!"
     }
     niwiwataque()
-    furia = furia+0.5  
+    furia = furia+0.25  
 });
 document.getElementById("vish").addEventListener("click", function vish(){
     turnosniwiw.classList.remove("mostra");
@@ -1520,6 +1531,12 @@ document.getElementById("terminaniwiw").addEventListener("click", function termi
     }
     if(foco==6 && sonic.vida<=0){
         foco++
+    }
+    if (timberth.vida<=0 && vlad.vida<=0 && demoman.vida<=0 && spy.vida<=0 && sniper.vida<=0 && sonic.vida<=0){
+        acao.classList.remove("mostra");
+        acao.classList.add("esconde");
+        gameover.classList.remove("esconde");
+        gameover.classList.add("mostra")
     }
     mudafoco()
 })
