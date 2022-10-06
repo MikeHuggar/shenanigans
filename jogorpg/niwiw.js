@@ -206,6 +206,7 @@ let magiassonic = document.getElementById("magiassonic")
 let itens = document.getElementById("itens")
 let anuncio = document.getElementById("anuncioniwiw")
 let turnosniwiw = document.getElementById("turnosniwiw")
+let fimniwiw = document.getElementById("fimniwiw")
 //opcoes dos menus
 let ataca = false
 let defesa = false
@@ -221,7 +222,7 @@ class Personagem {
         this.adrenalina = adrenalina;
     }
 }
-let niwiw = {vida:125000, jarrate: false, chaos: false}
+let niwiw = {vida:40000, jarrate: false, chaos: false}
 let timberth = new Personagem(8000, 75, 0, false)
 let vlad = new Personagem(4000, 70, 0, false)
 let demoman = new Personagem(10000, 60, 0, false)
@@ -1271,11 +1272,29 @@ document.getElementById("proximoturno").addEventListener("click",function mudatu
     acao.classList.remove("esconde");
     acao.classList.add("mostra");
     foco++
-    if(foco==7){
+    if(foco==2 && vlad.vida<=0){
+        foco++
+    }
+    if(foco==3 && demoman.vida<=0){
+        foco++
+    }
+    if(foco==4 && spy.vida<=0){
+        foco++
+    }
+    if(foco==5 && sniper.vida<=0){
+        foco++
+    }
+    if(foco==6 && sonic.vida<=0){
+        foco++
+    }
+    if(foco==7 && niwiw.vida>0){
         acao.classList.remove("mostra");
         acao.classList.add("esconde");
         anuncio.classList.remove("esconde");
         anuncio.classList.add("mostra");
+    }
+    if(foco==7 && niwiw.vida<=0){
+        alert("Após uma árdura batalha, nossos heróis venceram o tenebroso Niwiw! Parabéns!")
     }
     mudafoco()
 });
@@ -1335,49 +1354,59 @@ function niwiwataque(){
         }
     }
     if(niwiwataca==3){
-        demoman.vida = demoman.vida-danoniwiw
-        if(alvocolateral==1){
-            timberth.vida = timberth.vida-(danoniwiw/2)
-            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Timberth..."
-        }
-        if(alvocolateral==2){
-            vlad.vida = vlad.vida-(danoniwiw/2)
-            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Vlad..."
-        }
-        if(alvocolateral==3){
-            spy.vida = spy.vida-(danoniwiw/2)
-            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Spy..."
-        }
-        if(alvocolateral==4){
-            sniper.vida = sniper.vida-(danoniwiw/2)
-            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Sniper..."
-        }
-        if(alvocolateral==5){
-            sonic.vida = sonic.vida-(danoniwiw/2)
-            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Sonic..."
+        if(demododge==true){
+            document.getElementById("narraniwiw").innerText = "Demoman não foi atingido por Niwiw"
+            demododge==true
+        } else {
+            demoman.vida = demoman.vida-danoniwiw
+            if(alvocolateral==1){
+                timberth.vida = timberth.vida-(danoniwiw/2)
+                document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Timberth..."
+            }
+            if(alvocolateral==2){
+                vlad.vida = vlad.vida-(danoniwiw/2)
+                document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Vlad..."
+            }
+            if(alvocolateral==3){
+                spy.vida = spy.vida-(danoniwiw/2)
+                document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Spy..."
+            }
+            if(alvocolateral==4){
+                sniper.vida = sniper.vida-(danoniwiw/2)
+                document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Sniper..."
+            }
+            if(alvocolateral==5){
+                sonic.vida = sonic.vida-(danoniwiw/2)
+                document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Demoman! E ainda acabou sobrando pro Sonic..."
+            }
         }
     }
     if(niwiwataca==4){
-        spy.vida = spy.vida-danoniwiw
-        if(alvocolateral==1){
-            timberth.vida = timberth.vida-(danoniwiw/2)
-            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Timberth..."
-        }
-        if(alvocolateral==2){
-            vlad.vida = vlad.vida-(danoniwiw/2)
-            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Vlad..."
-        }
-        if(alvocolateral==3){
-            demoman.vida = demoman.vida-(danoniwiw/2)
-            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Demoman..."
-        }
-        if(alvocolateral==4){
-            sniper.vida = sniper.vida-(danoniwiw/2)
-            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Sniper..."
-        }
-        if(alvocolateral==5){
-            sonic.vida = sonic.vida-(danoniwiw/2)
-            document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Sonic..."
+        if(spydodge==true){
+            document.getElementById("narraniwiw").innerText = "Spy não foi atingido por Niwiw!"
+            spydodge==false
+        } else {
+            spy.vida = spy.vida-danoniwiw
+            if(alvocolateral==1){
+                timberth.vida = timberth.vida-(danoniwiw/2)
+                document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Timberth..."
+            }
+            if(alvocolateral==2){
+                vlad.vida = vlad.vida-(danoniwiw/2)
+                document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Vlad..."
+            }
+            if(alvocolateral==3){
+                demoman.vida = demoman.vida-(danoniwiw/2)
+                document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Demoman..."
+            }
+            if(alvocolateral==4){
+                sniper.vida = sniper.vida-(danoniwiw/2)
+                document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Sniper..."
+            }
+            if(alvocolateral==5){
+                sonic.vida = sonic.vida-(danoniwiw/2)
+                document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Spy! E ainda acabou sobrando pro Sonic..."
+            }
         }
     }
     if(niwiwataca==5){
@@ -1462,3 +1491,35 @@ document.getElementById("proximoniwiw").addEventListener("click", function proxi
     niwiwataque()
     furia = furia+0.5  
 });
+document.getElementById("vish").addEventListener("click", function vish(){
+    turnosniwiw.classList.remove("mostra");
+    turnosniwiw.classList.add("esconde");
+    fimniwiw.classList.remove("esconde");
+    fimniwiw.classList.add("mostra");
+});
+document.getElementById("terminaniwiw").addEventListener("click", function terminaniwiw(){
+    fimniwiw.classList.remove("mostra");
+    fimniwiw.classList.add("esconde");
+    acao.classList.remove("esconde");
+    acao.classList.add("mostra");
+    foco=1
+    if(timberth.vida<=0){
+        foco++
+    }
+    if(foco==2 && vlad.vida<=0){
+        foco++
+    }
+    if(foco==3 && demoman.vida<=0){
+        foco++
+    }
+    if(foco==4 && spy.vida<=0){
+        foco++
+    }
+    if(foco==5 && sniper.vida<=0){
+        foco++
+    }
+    if(foco==6 && sonic.vida<=0){
+        foco++
+    }
+    mudafoco()
+})
