@@ -1317,7 +1317,7 @@ let alvocolateral = 0
 //furia é uma variavel que aumenta em meio ponto a cada turno do niwiw. foi criada com a intençao de fazer uma batalha progressivamente mais difícil
 let furia = 1
 function niwiwataque(){
-    danoniwiw = (600*furia)*ataquesniwiw
+    danoniwiw = parseInt((600*furia)*ataquesniwiw)
     if(niwiwataca==1){
         timberth.vida = timberth.vida-danoniwiw
         if(alvocolateral==1){
