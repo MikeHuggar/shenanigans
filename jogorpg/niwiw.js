@@ -165,7 +165,7 @@ function aumentamagiadefesa(){
             document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
         } else {
             spy.magia = 100
-            document.getElementById("mpspyh").innerText = "MP: " + spy.magia + "%"
+            document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
         }
     }
     if(foco==5){
