@@ -1133,7 +1133,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
         document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
     }
     if(magia==true && magia2==true && foco==3){
-        demododge==true
+        demododge=true
         narracao.innerText= "Demoman ficará nos ares até o próximo turno!"
         demoman.magia=0
         document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
@@ -1202,7 +1202,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
     if(magia==true && magia2==true && foco==5){
         narracao.innerText= "Niwiw voltou sua atenção para Sniper."
         sniper.magia = 0
-        snipertaunt = true
+        snipertaunt=true
         document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
     }
     if(magia==true && magia1==true && foco==6){
@@ -1367,7 +1367,7 @@ function niwiwataque(){
     if(niwiwataca==3){
         if(demododge==true){
             document.getElementById("narraniwiw").innerText = "Demoman não foi atingido por Niwiw"
-            demododge==true
+            demododge==false
         } else {
             demoman.vida = demoman.vida-danoniwiw
             if(alvocolateral==1){
@@ -1481,6 +1481,9 @@ document.getElementById("proximoniwiw").addEventListener("click", function proxi
     niwiwataca=Math.floor(Math.random()*6)+1
     alvocolateral=Math.floor(Math.random()*5)+1
     ataquesniwiw=Math.floor(Math.random()*3)+1
+    if(snipertaunt==true){
+        niwiwataca=5
+    }
     if(niwiwataca==1){
         document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Timberth " + ataquesniwiw + " vez(es)!"
     }
@@ -1500,7 +1503,7 @@ document.getElementById("proximoniwiw").addEventListener("click", function proxi
         document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Sonic " + ataquesniwiw + " vez(es)!"
     }
     niwiwataque()
-    furia = furia+0.25  
+    furia = furia+0.1  
 });
 document.getElementById("vish").addEventListener("click", function vish(){
     turnosniwiw.classList.remove("mostra");
