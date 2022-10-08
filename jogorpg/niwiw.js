@@ -1483,6 +1483,7 @@ document.getElementById("proximoniwiw").addEventListener("click", function proxi
     ataquesniwiw=Math.floor(Math.random()*3)+1
     if(snipertaunt==true){
         niwiwataca=5
+        snipertaunt=false
     }
     if(niwiwataca==1){
         document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Timberth " + ataquesniwiw + " vez(es)!"
