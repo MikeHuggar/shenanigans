@@ -689,6 +689,10 @@ document.getElementById("item").addEventListener("click", function selectitem(){
     acao.classList.add("esconde");
     itens.classList.remove("esconde");
     itens.classList.add("mostra");
+    ataca = false
+    defesa = false
+    magia = false
+    skip = false
 });
 document.getElementById("voltaitem").addEventListener("click", function voltaitem(){
     itens.classList.remove("mostra");
