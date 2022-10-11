@@ -1399,7 +1399,7 @@ function niwiwataque(){
     if(niwiwataca==4){
         if(spydodge==true){
             document.getElementById("narraniwiw").innerText = "Spy não foi atingido por Niwiw!"
-            spydodge==false
+            spydodge=false
         } else {
             spy.vida = spy.vida-danoniwiw
             if(alvocolateral==1){
