@@ -1184,21 +1184,16 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
         document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
     }
     if(magia==true && magia1==true && foco==5){
-        acerto=Math.floor(Math.random()*100)+1
-        if(acerto<=sniper.precisao-20){
+        niwiw.vida = niwiw.vida-4000
+        if(sniper.adrenalina==true){
             niwiw.vida = niwiw.vida-4000
-            if(sniper.adrenalina==true){
-                niwiw.vida = niwiw.vida-4000
-            }
-            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
-            if(sniper.adrenalina==true){
-                narracao.innerText= "Sniper acerta o tiro, causando 8000 de dano!"
-                sniper.adrenalina = false
-            } else {
-                narracao.innerText= "Sniper acerta o tiro, causando 4000 de dano!"
-            }
+        }
+        document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+        if(sniper.adrenalina==true){
+            narracao.innerText= "Sniper acerta o tiro, causando 8000 de dano!"
+            sniper.adrenalina = false
         } else {
-            narracao.innerText= "Sniper errou o tiro"
+            narracao.innerText= "Sniper acerta o tiro, causando 4000 de dano!"
         }
         sniper.magia=0
         document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
@@ -1371,7 +1366,7 @@ function niwiwataque(){
     if(niwiwataca==3){
         if(demododge==true){
             document.getElementById("narraniwiw").innerText = "Demoman não foi atingido por Niwiw"
-            demododge==false
+            demododge=false
         } else {
             demoman.vida = demoman.vida-danoniwiw
             if(alvocolateral==1){
@@ -1508,7 +1503,7 @@ document.getElementById("proximoniwiw").addEventListener("click", function proxi
         document.getElementById("alvoniwiw").innerText = "Niwiw ferozmente ataca Sonic " + ataquesniwiw + " vez(es)!"
     }
     niwiwataque()
-    furia = furia+0.1  
+    furia = furia+0.05  
 });
 document.getElementById("vish").addEventListener("click", function vish(){
     turnosniwiw.classList.remove("mostra");
