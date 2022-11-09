@@ -3,7 +3,7 @@
 	"name": "asdasd",
 	"lang": "pt-br",
 	"description": "asdasd",
-	"start_url": "./niwiwboss.html",
+	"start_url": "niwiwboss.html",
 	"background_color": "#00aae7",
 	"theme_color": "#00aae7",
 	"dir": "ltr",
