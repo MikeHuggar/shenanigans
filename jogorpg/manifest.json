@@ -3,7 +3,7 @@
     "name": "Shenanigans",
     "lang": "pt-br",
     "description": "Jogo em HTML5",
-    "start_url": "niwiwboss.html",
+    "start_url": "https://mikehuggar.github.io/shenanigans/jogorpg/niwiwboss.html",
     "scope":"./",
     "background_color": "#00aae7",
     "theme_color": "#00aae7",
