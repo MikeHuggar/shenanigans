@@ -1,17 +1,8 @@
 //constantes utilizadas
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
-  'niwiwboss.html',
-  'niwiwcss.css',
-  'niwiw.js',
-  'manifest.json',
-  'demoman.png',
-  'niwiw.png',
-  'sniper.png',
-  'sonic.png',
-  'spy.png',
-  'timberth.png',
-  'vlad.png',
+  './niwiwboss.html',
+  './manifest.json',
 ];
 
 //-----------Ao instalar-------
