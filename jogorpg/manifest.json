@@ -1,0 +1,80 @@
+{
+    "short_name": "shngns",
+    "name": "Shenanigans",
+    "lang": "pt-br",
+    "description": "Jogo em HTML5",
+    "start_url": "niwiwboss.html",
+    "scope":"./",
+    "background_color": "#00aae7",
+    "theme_color": "#00aae7",
+    "dir": "ltr",
+    "display": "standalone",
+    "orientation": "landscape",
+    "icons": [
+        {
+         "src": "./icon/maskable_icon_x96.png",
+         "type": "image/png",
+         "sizes": "192x192"
+        },
+        {
+         "src": "./icon/maskable_icon_x96.png",
+         "type": "image/png",
+         "sizes": "180x180"
+        },
+        {
+         "src": "./icon/maskable_icon_x96.png",
+         "type": "image/png",
+         "sizes": "152x152"
+        },
+        {
+         "src": "./icon/maskable_icon_x96.png",
+         "type": "image/png",
+         "sizes": "144x144"
+        },
+        {
+         "src": "./icon/maskable_icon_x96.png",
+         "type": "image/png",
+         "sizes": "120x120"
+        },
+        {
+         "src": "./icon/maskable_icon_x96.png",
+         "type": "image/png",
+         "sizes": "114x114"
+        },
+        {
+         "src": "./icon/maskable_icon_x96.png",
+         "type": "image/png",
+         "sizes": "96x96"
+        },
+        {
+         "src": "./icon/maskable_icon_x72.png",
+         "type": "image/png",
+         "sizes": "76x76"
+        },
+        {
+         "src": "./icon/maskable_icon_x72.png",
+         "type": "image/png",
+         "sizes": "72x72"
+        },
+        {
+         "src": "./icon/maskable_icon_x48.png",
+         "type": "image/png",
+         "sizes": "60x60"
+        },
+        {
+         "src": "./icon/maskable_icon_x48.png",
+         "type": "image/png",
+         "sizes": "57x57"
+        },
+        {
+         "src": "./icon/maskable_icon_x48.png",
+         "type": "image/png",
+         "sizes": "32x32"
+        },
+        {
+         "src": "./icon/maskable_icon_x48.png",
+         "type": "image/png",
+         "sizes": "16x16"
+        }
+       ]
+   }
