@@ -54,7 +54,7 @@ p{
     font-size: 3vw;
 }
 .mostra{
-    display: flex;
+    display: block;
 }
 .esconde{
     display: none;
