@@ -78,55 +78,55 @@ function aumentamagia(){
     if(foco==1){
         timberth.magia = timberth.magia+10
         if(timberth.magia<100){
-            document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+            document.getElementById("mptimberth").innerText = timberth.magia + "%"
         } else {
             timberth.magia = 100
-            document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+            document.getElementById("mptimberth").innerText = timberth.magia + "%"
         }
     }
     if(foco==2){
         vlad.magia = vlad.magia+10
         if(vlad.magia<100){
-            document.getElementById("mpvlad").innerText = "MP: " + vlad.magia + "%"
+            document.getElementById("mpvlad").innerText = vlad.magia + "%"
         } else {
             vlad.magia = 100
-            document.getElementById("mpvlad").innerText = "MP: " + vlad.magia + "%"
+            document.getElementById("mpvlad").innerText = vlad.magia + "%"
         }
     }
     if(foco==3){
         demoman.magia = demoman.magia+10
         if(demoman.magia<100){
-            document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
+            document.getElementById("mpdemo").innerText = demoman.magia + "%"
         } else {
             demoman.magia = 100
-            document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
+            document.getElementById("mpdemo").innerText = demoman.magia + "%"
         }
     }
     if(foco==4){
         spy.magia = spy.magia+10
         if(spy.magia<100){
-            document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
+            document.getElementById("mpspy").innerText = spy.magia + "%"
         } else {
             spy.magia = 100
-            document.getElementById("mpspyh").innerText = "MP: " + spy.magia + "%"
+            document.getElementById("mpspyh").innerText = spy.magia + "%"
         }
     }
     if(foco==5){
         sniper.magia = sniper.magia+20
         if(sniper.magia<100){
-            document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
+            document.getElementById("mpsniper").innerText = sniper.magia + "%"
         } else {
             sniper.magia = 100
-            document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
+            document.getElementById("mpsniper").innerText = sniper.magia + "%"
         }
     }
     if(foco==6){
         sonic.magia = sonic.magia+15
         if(sonic.magia<100){
-            document.getElementById("mpsonic").innerText = "MP: " + sonic.magia + "%"
+            document.getElementById("mpsonic").innerText = sonic.magia + "%"
         } else {
             sonic.magia = 100
-            document.getElementById("mpsonic").innerText = "MP: " + sonic.magia + "%"
+            document.getElementById("mpsonic").innerText = sonic.magia + "%"
         }
     }
 };
@@ -135,55 +135,55 @@ function aumentamagiadefesa(){
     if(foco==1){
         timberth.magia = timberth.magia+20
         if(timberth.magia<100){
-            document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+            document.getElementById("mptimberth").innerText = timberth.magia + "%"
         } else {
             timberth.magia = 100
-            document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+            document.getElementById("mptimberth").innerText = timberth.magia + "%"
         }
     }
     if(foco==2){
         vlad.magia = vlad.magia+20
         if(vlad.magia<100){
-            document.getElementById("mpvlad").innerText = "MP: " + vlad.magia + "%"
+            document.getElementById("mpvlad").innerText = vlad.magia + "%"
         } else {
             vlad.magia = 100
-            document.getElementById("mpvlad").innerText = "MP: " + vlad.magia + "%"
+            document.getElementById("mpvlad").innerText = vlad.magia + "%"
         }
     }
     if(foco==3){
         demoman.magia = demoman.magia+20
         if(demoman.magia<100){
-            document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
+            document.getElementById("mpdemo").innerText = demoman.magia + "%"
         } else {
             demoman.magia = 100
-            document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
+            document.getElementById("mpdemo").innerText = demoman.magia + "%"
         }
     }
     if(foco==4){
         spy.magia = spy.magia+20
         if(spy.magia<100){
-            document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
+            document.getElementById("mpspy").innerText = spy.magia + "%"
         } else {
             spy.magia = 100
-            document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
+            document.getElementById("mpspy").innerText = spy.magia + "%"
         }
     }
     if(foco==5){
         sniper.magia = sniper.magia+20
         if(sniper.magia<100){
-            document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
+            document.getElementById("mpsniper").innerText = sniper.magia + "%"
         } else {
             sniper.magia = 100
-            document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
+            document.getElementById("mpsniper").innerText = sniper.magia + "%"
         }
     }
     if(foco==6){
         sonic.magia = sonic.magia+20
         if(sonic.magia<100){
-            document.getElementById("mpsonic").innerText = "MP: " + sonic.magia + "%"
+            document.getElementById("mpsonic").innerText = sonic.magia + "%"
         } else {
             sonic.magia = 100
-            document.getElementById("mpsonic").innerText = "MP: " + sonic.magia + "%"
+            document.getElementById("mpsonic").innerText = sonic.magia + "%"
         }
     }
 };
@@ -224,7 +224,7 @@ class Personagem {
         this.adrenalina = adrenalina;
     }
 }
-let niwiw = {vida:40000, jarrate: false, chaos: false}
+let niwiw = {vida:40000, chaos: false}
 let timberth = new Personagem(8000, 75, 0, false)
 let vlad = new Personagem(4000, 70, 0, false)
 let demoman = new Personagem(10000, 60, 0, false)
@@ -241,6 +241,123 @@ let demododge = false
 let spydodge = false
 let sniperreload = false
 let snipertaunt = false
+//codigo para iniciar/reiniciar o jogo
+document.getElementById("start").addEventListener("click",function iniciar(){
+    document.getElementById("inicio").classList.add("esconde");
+    document.getElementById("fundo").classList.remove("esconde");
+    document.getElementById("fundo").style.display="flex";
+    document.getElementById("painel").classList.remove("esconde");
+    document.getElementById("painel").style.display="flex";
+    document.getElementById("niwiwtheme").play();
+});
+document.getElementById("retry").addEventListener("click",function retry(){
+    gameover.classList.remove("mostra");
+    gameover.classList.add("esconde");
+    acao.classList.remove("esconde");
+    acao.classList.add("mostra");
+    foco=1
+    mudafoco()
+    niwiw.vida = 40000
+    timberth.vida = 8000
+    timberth.magia = 0
+    timberth.adrenalina = false
+    vlad.vida = 4000
+    vlad.magia = 0
+    vlad.adrenalina = false
+    demoman.vida = 10000
+    demoman.magia = 0
+    demoman.adrenalina = false
+    spy.vida = 6000
+    spy.magia = 0
+    spy.adrenalina = false
+    sniper.vida = 8000
+    sniper.magia = 0
+    sniper.adrenalina= false
+    sonic.vida = 6000
+    sonic.magia = 0
+    sonic.adrenalina = false
+    magia1 = false
+    magia2 = false
+    item1 = false
+    item2 = false
+    item1quant = 2
+    item2quant = 2
+    demododge = false
+    spydodge = false
+    sniperreload = false
+    snipertaunt = false
+    niwiw.chaos = false
+    document.getElementById("hpniwiw").innerText = niwiw.vida
+    document.getElementById("hptimberth").innerText = timberth.vida
+    document.getElementById("mptimberth").innerText = "0%"
+    document.getElementById("hpvlad").innerText = vlad.vida
+    document.getElementById("mpvlad").innerText = "0%"
+    document.getElementById("hpdemo").innerText = demoman.vida
+    document.getElementById("mpdemo").innerText = "0%"
+    document.getElementById("hpspy").innerText = spy.vida
+    document.getElementById("mpspy").innerText = "0%"
+    document.getElementById("hpsniper").innerText = sniper.vida
+    document.getElementById("mpsniper").innerText = "0%"
+    document.getElementById("hpsonic").innerText = sonic.vida
+    document.getElementById("mpsonic").innerText = "0%"
+    document.getElementById("pocao").innerText = "Poção de cura (x" + item1quant + ")"
+    document.getElementById("mana").innerText = "Poção de mana (x" + item2quant + ")"
+    furia = 1
+});
+document.getElementById("replay").addEventListener("click",function replay(){
+    parabens.classList.remove("mostra");
+    parabens.classList.add("esconde");
+    acao.classList.remove("esconde");
+    acao.classList.add("mostra");
+    foco=1
+    mudafoco()
+    niwiw.vida = 40000
+    timberth.vida = 8000
+    timberth.magia = 0
+    timberth.adrenalina = false
+    vlad.vida = 4000
+    vlad.magia = 0
+    vlad.adrenalina = false
+    demoman.vida = 10000
+    demoman.magia = 0
+    demoman.adrenalina = false
+    spy.vida = 6000
+    spy.magia = 0
+    spy.adrenalina = false
+    sniper.vida = 8000
+    sniper.magia = 0
+    sniper.adrenalina= false
+    sonic.vida = 6000
+    sonic.magia = 0
+    sonic.adrenalina = false
+    magia1 = false
+    magia2 = false
+    item1 = false
+    item2 = false
+    item1quant = 2
+    item2quant = 2
+    demododge = false
+    spydodge = false
+    sniperreload = false
+    snipertaunt = false
+    niwiw.chaos = false
+    document.getElementById("hpniwiw").innerText = niwiw.vida
+    document.getElementById("hptimberth").innerText = timberth.vida
+    document.getElementById("mptimberth").innerText = "0%"
+    document.getElementById("hpvlad").innerText = vlad.vida
+    document.getElementById("mpvlad").innerText = "0%"
+    document.getElementById("hpdemo").innerText = demoman.vida
+    document.getElementById("mpdemo").innerText = "0%"
+    document.getElementById("hpspy").innerText = spy.vida
+    document.getElementById("mpspy").innerText = "0%"
+    document.getElementById("hpsniper").innerText = sniper.vida
+    document.getElementById("mpsniper").innerText = "0%"
+    document.getElementById("hpsonic").innerText = sonic.vida
+    document.getElementById("mpsonic").innerText = "0%"
+    document.getElementById("pocao").innerText = "Poção de cura (x" + item1quant + ")"
+    document.getElementById("mana").innerText = "Poção de mana (x" + item2quant + ")"
+    furia = 1
+});
 //acao dos personagens
 //codigo para a funcao de ataques
 document.getElementById("ataque").addEventListener("click",function atacando(){
@@ -530,7 +647,7 @@ document.getElementById("sticky").addEventListener("click", function magiademo2(
     confirma.classList.remove("esconde");
     confirma.classList.add("mostra");
     magia2 = true
-    descricao.innerText= "Demoman irá detonar explosivos colocados diretamente abaixo de si, lançando-se aos ares e ficando imune à dano pelo próximo turno."
+    descricao.innerText= "Demoman irá detonar explosivos colocados diretamente abaixo de si, lançando-se aos ares e ficando imune à proxima instância de dano."
 });
 document.getElementById("invis").addEventListener("click", function magiaspy1(){
     magias.classList.remove("mostra");
@@ -554,7 +671,7 @@ document.getElementById("megatiro").addEventListener("click", function magiasnip
     confirma.classList.remove("esconde");
     confirma.classList.add("mostra");
     magia1 = true
-    descricao.innerText= "Sniper carregar um tiro mais poderoso que o normal, causando 4000 de dano."
+    descricao.innerText= "Sniper carregará um tiro mais poderoso que o normal, causando 4000 de dano."
 });
 document.getElementById("provocacao").addEventListener("click", function magiasniper2(){
     magias.classList.remove("mostra");
@@ -570,7 +687,7 @@ document.getElementById("spin").addEventListener("click", function magiasonic1()
     confirma.classList.remove("esconde");
     confirma.classList.add("mostra");
     magia1 = true
-    descricao.innerText= "Sonic irá carregar seu Spindash em cima de Niwiw, causando uma grande quantidade de dano."
+    descricao.innerText= "Sonic irá girar em cima de Niwiw, causando uma grande quantidade de dano."
 });
 document.getElementById("chaos").addEventListener("click", function magiasonic2(){
     magias.classList.remove("mostra");
@@ -589,14 +706,14 @@ document.getElementById("alvotimberth").addEventListener("click", function alvot
     if(magia1==true){
         narracao.innerText= "Timberth recebeu 3000 pontos de vida!"
         timberth.vida = timberth.vida+3000
-        document.getElementById("hptimberth").innerText= "HP: " + timberth.vida
+        document.getElementById("hptimberth").innerText= timberth.vida
     }
     if(magia2==true){
         narracao.innerText= "Timberth agora está sobre os efeitos da ADRENALINA!"
         timberth.adrenalina=true
     }
     vlad.magia=0
-    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
+    document.getElementById("mpvlad").innerText= vlad.magia + "%"
 });
 document.getElementById("alvovlad").addEventListener("click", function alvovlad(){
     selectvlad.classList.remove("mostra");
@@ -606,14 +723,14 @@ document.getElementById("alvovlad").addEventListener("click", function alvovlad(
     if(magia1==true){
         narracao.innerText= "Vlad recebeu 3000 pontos de vida!"
         vlad.vida = vlad.vida+3000
-        document.getElementById("hpvlad").innerText= "HP: " + vlad.vida
+        document.getElementById("hpvlad").innerText= vlad.vida
     }
     if(magia2==true){
         narracao.innerText= "Vlad agora está sobre os efeitos da ADRENALINA!"
         vlad.adrenalina=true
     }
     vlad.magia=0
-    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
+    document.getElementById("mpvlad").innerText= vlad.magia + "%"
 });
 document.getElementById("alvodemo").addEventListener("click", function alvodemo(){
     selectvlad.classList.remove("mostra");
@@ -623,14 +740,14 @@ document.getElementById("alvodemo").addEventListener("click", function alvodemo(
     if(magia1==true){
         narracao.innerText= "Demoman recebeu 3000 pontos de vida!"
         demoman.vida = demoman.vida+3000
-        document.getElementById("hpdemo").innerText= "HP: " + demoman.vida
+        document.getElementById("hpdemo").innerText= demoman.vida
     }
     if(magia2==true){
         narracao.innerText= "Demoman agora está sobre os efeitos da ADRENALINA!"
         demoman.adrenalina=true
     }
     vlad.magia=0
-    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
+    document.getElementById("mpvlad").innerText= vlad.magia + "%"
 });
 document.getElementById("alvospy").addEventListener("click", function alvospy(){
     selectvlad.classList.remove("mostra");
@@ -640,14 +757,14 @@ document.getElementById("alvospy").addEventListener("click", function alvospy(){
     if(magia1==true){
         narracao.innerText= "Spy recebeu 3000 pontos de vida!"
         spy.vida = spy.vida+3000
-        document.getElementById("hpspy").innerText= "HP: " + spy.vida
+        document.getElementById("hpspy").innerText= spy.vida
     }
     if(magia2==true){
         narracao.innerText= "Spy agora está sobre os efeitos da ADRENALINA!"
         spy.adrenalina=true
     }
     vlad.magia=0
-    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
+    document.getElementById("mpvlad").innerText= vlad.magia + "%"
 });
 document.getElementById("alvosniper").addEventListener("click", function alvosniper(){
     selectvlad.classList.remove("mostra");
@@ -657,14 +774,14 @@ document.getElementById("alvosniper").addEventListener("click", function alvosni
     if(magia1==true){
         narracao.innerText= "Sniper recebeu 3000 pontos de vida!"
         sniper.vida = sniper.vida+3000
-        document.getElementById("hpsniper").innerText= "HP: " + sniper.vida
+        document.getElementById("hpsniper").innerText= sniper.vida
     }
     if(magia2==true){
         narracao.innerText= "Sniper agora está sobre os efeitos da ADRENALINA!"
         sniper.adrenalina=true
     }
     vlad.magia=0
-    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
+    document.getElementById("mpvlad").innerText= vlad.magia + "%"
 });
 document.getElementById("alvosonic").addEventListener("click", function alvosonic(){
     selectvlad.classList.remove("mostra");
@@ -674,14 +791,14 @@ document.getElementById("alvosonic").addEventListener("click", function alvosoni
     if(magia1==true){
         narracao.innerText= "Sonic recebeu 3000 pontos de vida!"
         sonic.vida = sonic.vida+3000
-        document.getElementById("hpsonic").innerText= "HP: " + sonic.vida
+        document.getElementById("hpsonic").innerText= sonic.vida
     }
     if(magia2==true){
         narracao.innerText= "Sonic agora está sobre os efeitos da ADRENALINA!"
         sonic.adrenalina=true
     }
     vlad.magia=0
-    document.getElementById("mpvlad").innerText= "MP: " + vlad.magia + "%"
+    document.getElementById("mpvlad").innerText= vlad.magia + "%"
 });
 //mostra o menu de itens para o jogador ao clicar na aba de itens
 document.getElementById("item").addEventListener("click", function selectitem(){
@@ -754,7 +871,7 @@ document.getElementById("itemtimberth").addEventListener("click", function itemt
     if(item1==true){
         narracao.innerText = "Timberth recebeu 3000 pontos de vida!"
         timberth.vida = timberth.vida+3000
-        document.getElementById("hptimberth").innerText = "HP: " + timberth.vida
+        document.getElementById("hptimberth").innerText = timberth.vida
         item = false
         item1 = false
         item1quant--
@@ -763,7 +880,7 @@ document.getElementById("itemtimberth").addEventListener("click", function itemt
     if(item2==true){
         narracao.innerText = "Timberth está com seu medidor de magia cheio!"
         timberth.magia = 100
-        document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+        document.getElementById("mptimberth").innerText = timberth.magia + "%"
         item = false
         item2 = false
         item2quant--
@@ -778,7 +895,7 @@ document.getElementById("itemvlad").addEventListener("click", function itemvlad(
     if(item1==true){
         narracao.innerText = "Vlad recebeu 3000 pontos de vida!"
         vlad.vida = vlad.vida+3000
-        document.getElementById("hpvlad").innerText = "HP: " + vlad.vida
+        document.getElementById("hpvlad").innerText = vlad.vida
         item = false
         item1 = false
         item1quant--
@@ -787,7 +904,7 @@ document.getElementById("itemvlad").addEventListener("click", function itemvlad(
     if(item2==true){
         narracao.innerText = "Vlad está com seu medidor de magia cheio!"
         vlad.magia = 100
-        document.getElementById("mpvlad").innerText = "MP: " + vlad.magia + "%"
+        document.getElementById("mpvlad").innerText = vlad.magia + "%"
         item = false
         item2 = false
         item2quant--
@@ -802,7 +919,7 @@ document.getElementById("itemdemo").addEventListener("click", function itemdemo(
     if(item1==true){
         narracao.innerText = "Demoman recebeu 3000 pontos de vida!"
         demoman.vida = demoman.vida+3000
-        document.getElementById("hpdemo").innerText = "HP: " + demoman.vida
+        document.getElementById("hpdemo").innerText = demoman.vida
         item = false
         item1 = false
         item1quant--
@@ -811,7 +928,7 @@ document.getElementById("itemdemo").addEventListener("click", function itemdemo(
     if(item2==true){
         narracao.innerText = "Demoman está com seu medidor de magia cheio!"
         demoman.magia = 100
-        document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
+        document.getElementById("mpdemo").innerText = demoman.magia + "%"
         item = false
         item2 = false
         item2quant--
@@ -826,7 +943,7 @@ document.getElementById("itemspy").addEventListener("click", function itemspy(){
     if(item1==true){
         narracao.innerText = "Spy recebeu 3000 pontos de vida!"
         spy.vida = spy.vida+3000
-        document.getElementById("hpspy").innerText = "HP: " + spy.vida
+        document.getElementById("hpspy").innerText = spy.vida
         item = false
         item1 = false
         item1quant--
@@ -835,7 +952,7 @@ document.getElementById("itemspy").addEventListener("click", function itemspy(){
     if(item2==true){
         narracao.innerText = "Spy está com seu medidor de magia cheio!"
         spy.magia = 100
-        document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
+        document.getElementById("mpspy").innerText = spy.magia + "%"
         item = false
         item2 = false
         item2quant--
@@ -850,7 +967,7 @@ document.getElementById("itemsniper").addEventListener("click", function itemsni
     if(item1==true){
         narracao.innerText = "Sniper recebeu 3000 pontos de vida!"
         sniper.vida = sniper.vida+3000
-        document.getElementById("hpsniper").innerText = "HP: " + sniper.vida
+        document.getElementById("hpsniper").innerText = sniper.vida
         item = false
         item1 = false
         item1quant--
@@ -859,7 +976,7 @@ document.getElementById("itemsniper").addEventListener("click", function itemsni
     if(item2==true){
         narracao.innerText = "Sniper está com seu medidor de magia cheio!"
         sniper.magia = 100
-        document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
+        document.getElementById("mpsniper").innerText = sniper.magia + "%"
         item = false
         item2 = false
         item2quant--
@@ -874,7 +991,7 @@ document.getElementById("itemsonic").addEventListener("click", function itemsoni
     if(item1==true){
         narracao.innerText = "Sonic recebeu 3000 pontos de vida!"
         sonic.vida = sonic.vida+3000
-        document.getElementById("hpsonic").innerText = "HP: " + sonic.vida
+        document.getElementById("hpsonic").innerText = sonic.vida
         item = false
         item1 = false
         item1quant--
@@ -883,7 +1000,7 @@ document.getElementById("itemsonic").addEventListener("click", function itemsoni
     if(item2==true){
         narracao.innerText = "Sonic está com seu medidor de magia cheio!"
         sonic.magia = 100
-        document.getElementById("mpsonic").innerText = "MP: " + sonic.magia + "%"
+        document.getElementById("mpsonic").innerText = sonic.magia + "%"
         item = false
         item2 = false
         item2quant--
@@ -954,7 +1071,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
                 narracao.innerText= "Niwiw é baleado, levando 200 de dano!"
                 niwiw.vida = niwiw.vida-200
             }
-            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            document.getElementById("hpniwiw").innerText = niwiw.vida
             aumentamagia()
         } else {
             narracao.innerText= "Timberth se lembrou das atrocidades que Niwiw fez e congelou de medo."
@@ -971,7 +1088,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
                 narracao.innerText= "Niwiw foi socado, levando 100 de dano!"
                 niwiw.vida = niwiw.vida-100
             }
-            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            document.getElementById("hpniwiw").innerText = niwiw.vida
             aumentamagia()
         } else {
             narracao.innerText= "Vlad ainda não consegue superar os seus traumas causados por Niwiw."
@@ -988,7 +1105,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
                 narracao.innerText= "A granada faz contato, causando 500 de dano em Niwiw!"
                 niwiw.vida = niwiw.vida-500
             }
-            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            document.getElementById("hpniwiw").innerText = niwiw.vida
             aumentamagia()
         } else {
             if(demoman.adrenalina==true){
@@ -999,7 +1116,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
                 narracao.innerText= "Apesar da granada não ter atingido Niwiw, ela explode perto o suficiente para causar 100 de dano!"
                 niwiw.vida = niwiw.vida-100
             }
-            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            document.getElementById("hpniwiw").innerText = niwiw.vida
         }
     }    
     if (ataca==true && foco==4){
@@ -1013,7 +1130,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
                 narracao.innerText= "Niwiw é baleado, levando 200 de dano!"
                 niwiw.vida = niwiw.vida-200
             }
-            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            document.getElementById("hpniwiw").innerText = niwiw.vida
             aumentamagia()
         } else {
             narracao.innerText= "Spy errou seu disparo."
@@ -1029,7 +1146,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
                 narracao.innerText= "Tiro certeiro! Niwiw leva 1000 de dano!"
                 niwiw.vida = niwiw.vida-1000
             }
-            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            document.getElementById("hpniwiw").innerText = niwiw.vida
             aumentamagia()
             sniperreload=true
         } else {
@@ -1046,7 +1163,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             narracao.innerText= "Niwiw é atingido, levando 100 de dano!"
             niwiw.vida = niwiw.vida-100
         }
-        document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+        document.getElementById("hpniwiw").innerText = niwiw.vida
         aumentamagia()
     }
     //aplica os efeitos da acao de defesa
@@ -1092,25 +1209,25 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             timberth.adrenalina = false
         }
         niwiw.vida = niwiw.vida-danoniwiw
-        document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+        document.getElementById("hpniwiw").innerText = niwiw.vida
         narracao.innerText= "Timberth acertou "+ tirosacertados + " tiro(s), causando um total de "+ danoniwiw + " de dano à Niwiw."
         timberth.magia=0
-        document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+        document.getElementById("mptimberth").innerText = timberth.magia + "%"
     }
     if (magia==true && magia2==true && foco==1){
         if(timberth.adrenalina==true){
             niwiw.vida = niwiw.vida-1400
-            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            document.getElementById("hpniwiw").innerText = niwiw.vida
             narracao.innerText= "A estrutura atômica de Niwiw foi levemente desestabilizada, lhe causando 1400 de dano!"
             timberth.magia=0
-            document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+            document.getElementById("mptimberth").innerText = timberth.magia + "%"
             timberth.adrenalina = false
         } else {
             niwiw.vida = niwiw.vida-700
-            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            document.getElementById("hpniwiw").innerText = niwiw.vida
             narracao.innerText= "A estrutura atômica de Niwiw foi levemente desestabilizada, lhe causando 700 de dano!"
             timberth.magia=0
-            document.getElementById("mptimberth").innerText = "MP: " + timberth.magia + "%"
+            document.getElementById("mptimberth").innerText = timberth.magia + "%"
         }
     }
     if (magia==true && foco==2){
@@ -1125,8 +1242,8 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             niwiw.vida = niwiw.vida-300
         }
         demoman.vida = demoman.vida+500
-        document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
-        document.getElementById("hpdemo").innerText = "HP: " + demoman.vida
+        document.getElementById("hpniwiw").innerText = niwiw.vida
+        document.getElementById("hpdemo").innerText = demoman.vida
         if(demoman.adrenalina==true){
             narracao.innerText= "Demoman atinge Niwiw com a sua Eyelander, causando 600 de dano e roubando um pouco de sua vitalidade!"
             demoman.adrenalina = false
@@ -1134,19 +1251,19 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             narracao.innerText= "Demoman atinge Niwiw com a sua Eyelander, causando 300 de dano e roubando um pouco de sua vitalidade!"
         }
         demoman.magia=50
-        document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
+        document.getElementById("mpdemo").innerText = demoman.magia + "%"
     }
     if(magia==true && magia2==true && foco==3){
         demododge=true
-        narracao.innerText= "Demoman ficará nos ares até o próximo turno!"
+        narracao.innerText= "Demoman está nos ares!"
         demoman.magia=0
-        document.getElementById("mpdemo").innerText = "MP: " + demoman.magia + "%"
+        document.getElementById("mpdemo").innerText = demoman.magia + "%"
     }
     if(magia==true && magia1==true && foco==4){
         spydodge=true
         narracao.innerText= "Spy ficou invisível."
         spy.magia=0
-        document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
+        document.getElementById("mpspy").innerText = spy.magia + "%"
     }
     if(magia==true && magia2==true && foco==4){
         if(spydodge==true){
@@ -1154,7 +1271,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             if(spy.adrenalina==true){
                 niwiw.vida = niwiw.vida-5000
             }
-            document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+            document.getElementById("hpniwiw").innerText = niwiw.vida
             if(spy.adrenalina==true){
                 narracao.innerText= "Spy consegue esfaquear Niwiw, causando 10000 pontos de dano! Vai ser difícil se recuperar dessa, hein?."
                 spy.adrenalina =false
@@ -1169,7 +1286,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
                 if(spy.adrenalina==true){
                     niwiw.vida = niwiw.vida-5000
                 }
-                document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+                document.getElementById("hpniwiw").innerText = niwiw.vida
                 if(spy.adrenalina==true){
                     narracao.innerText= "Spy consegue esfaquear Niwiw, causando 10000 pontos de dano! Vai ser difícil se recuperar dessa, hein?."
                     spy.adrenalina =false
@@ -1181,14 +1298,14 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             }
         }
         spy.magia=0
-        document.getElementById("mpspy").innerText = "MP: " + spy.magia + "%"
+        document.getElementById("mpspy").innerText = spy.magia + "%"
     }
     if(magia==true && magia1==true && foco==5){
         niwiw.vida = niwiw.vida-4000
         if(sniper.adrenalina==true){
             niwiw.vida = niwiw.vida-4000
         }
-        document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+        document.getElementById("hpniwiw").innerText = niwiw.vida
         if(sniper.adrenalina==true){
             narracao.innerText= "Sniper acerta o tiro, causando 8000 de dano!"
             sniper.adrenalina = false
@@ -1196,20 +1313,20 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             narracao.innerText= "Sniper acerta o tiro, causando 4000 de dano!"
         }
         sniper.magia=0
-        document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
+        document.getElementById("mpsniper").innerText = sniper.magia + "%"
     }
     if(magia==true && magia2==true && foco==5){
         narracao.innerText= "Niwiw voltou sua atenção para Sniper."
         sniper.magia = 0
         snipertaunt=true
-        document.getElementById("mpsniper").innerText = "MP: " + sniper.magia + "%"
+        document.getElementById("mpsniper").innerText = sniper.magia + "%"
     }
     if(magia==true && magia1==true && foco==6){
         niwiw.vida = niwiw.vida-800
         if(sonic.adrenalina==true){
             niwiw.vida = niwiw.vida-800
         }
-        document.getElementById("hpniwiw").innerText = "HP: " + niwiw.vida
+        document.getElementById("hpniwiw").innerText = niwiw.vida
         if(sonic.adrenalina==true){
             narracao.innerText= "Sonic inflige 1600 pontos de dano à Niwiw!"
             sonic.adrenalina = false
@@ -1217,7 +1334,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             narracao.innerText= "Sonic inflige 800 pontos de dano à Niwiw!"
         }
         sonic.magia=0
-        document.getElementById("mpsonic").innerText = "MP: " + sonic.magia + "%"
+        document.getElementById("mpsonic").innerText = sonic.magia + "%"
     }
     if(magia==true && magia2==true && foco==6){
         acerto=Math.floor(Math.random()*100)+1
@@ -1228,7 +1345,7 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
             narracao.innerText= "O poder da Esmeralda parece não ter funcionado em Niwiw."
         }
         sonic.magia=0
-        document.getElementById("mpsonic").innerText = "MP: " + sonic.magia + "%"
+        document.getElementById("mpsonic").innerText = sonic.magia + "%"
     }
     if(item==true){
         outcome.classList.remove("mostra");
@@ -1238,32 +1355,32 @@ document.getElementById("confirmaacao").addEventListener("click",function confir
     }
     if(skip==true && foco==1){
         timberth.vida = timberth.vida+500
-        document.getElementById("hptimberth").innerText = "HP: " + timberth.vida
+        document.getElementById("hptimberth").innerText = timberth.vida
         narracao.innerText= "Timberth retomou um pouco de seu fôlego."
     }
     if(skip==true && foco==2){
         vlad.vida = vlad.vida+500
-        document.getElementById("hpvlad").innerText = "HP: " + vlad.vida
+        document.getElementById("hpvlad").innerText = vlad.vida
         narracao.innerText= "Vlad retomou um pouco de seu fôlego."
     }
     if(skip==true && foco==3){
         demoman.vida = demoman.vida+500
-        document.getElementById("hpdemo").innerText = "HP: " + demoman.vida
+        document.getElementById("hpdemo").innerText = demoman.vida
         narracao.innerText= "Demoman retomou um pouco de seu fôlego."
     }
     if(skip==true && foco==4){
         spy.vida = spy.vida+500
-        document.getElementById("hpspy").innerText = "HP: " + spy.vida
+        document.getElementById("hpspy").innerText = spy.vida
         narracao.innerText= "Spy retomou um pouco de seu fôlego."
     }
     if(skip==true && foco==5){
         sniper.vida = sniper.vida+500
-        document.getElementById("hpsniper").innerText = "HP: " + sniper.vida
+        document.getElementById("hpsniper").innerText = sniper.vida
         narracao.innerText= "Sniper retomou um pouco de seu fôlego."
     }
     if(skip==true && foco==6){
         sonic.vida = sonic.vida+500
-        document.getElementById("hpsonic").innerText = "HP: " + sonic.vida
+        document.getElementById("hpsonic").innerText = sonic.vida
         narracao.innerText= "Sonic retomou um pouco de seu fôlego."
     }
 });
@@ -1313,7 +1430,7 @@ let ataquesniwiw = 0
 let niwiwataca = 0
 //alvocolateral determina quem sofrerá dano além do alvo principal de niwiw
 let alvocolateral = 0
-//furia é uma variavel que aumenta em meio ponto a cada turno do niwiw. foi criada com a intençao de fazer uma batalha progressivamente mais difícil
+//furia é uma variavel que aumenta a cada turno do niwiw. foi criada com a intençao de fazer uma batalha progressivamente mais difícil
 let furia = 1
 function niwiwataque(){
     danoniwiw = parseInt((600*furia)*ataquesniwiw)
@@ -1365,7 +1482,7 @@ function niwiwataque(){
     }
     if(niwiwataca==3){
         if(demododge==true){
-            document.getElementById("narraniwiw").innerText = "Demoman não foi atingido por Niwiw"
+            document.getElementById("narraniwiw").innerText = "Demoman não foi atingido por Niwiw!"
             demododge=false
         } else {
             demoman.vida = demoman.vida-danoniwiw
@@ -1465,12 +1582,12 @@ function niwiwataque(){
             document.getElementById("narraniwiw").innerText = "Niwiw causou " + danoniwiw + " de dano em Sonic! E ainda acabou sobrando pro Sniper..."
         }
     }
-    document.getElementById("hptimberth").innerText = "HP: " + timberth.vida
-    document.getElementById("hpvlad").innerText = "HP: " + vlad.vida
-    document.getElementById("hpdemo").innerText = "HP: " + demoman.vida
-    document.getElementById("hpspy").innerText = "HP: " + spy.vida
-    document.getElementById("hpsniper").innerText = "HP: " + sniper.vida
-    document.getElementById("hpsonic").innerText = "HP: " + sonic.vida
+    document.getElementById("hptimberth").innerText = timberth.vida
+    document.getElementById("hpvlad").innerText = vlad.vida
+    document.getElementById("hpdemo").innerText = demoman.vida
+    document.getElementById("hpspy").innerText = spy.vida
+    document.getElementById("hpsniper").innerText = sniper.vida
+    document.getElementById("hpsonic").innerText = sonic.vida
 };
 document.getElementById("proximoniwiw").addEventListener("click", function proximoniwiw(){
     anuncio.classList.remove("mostra");
@@ -1542,4 +1659,4 @@ document.getElementById("terminaniwiw").addEventListener("click", function termi
         gameover.classList.add("mostra")
     }
     mudafoco()
-})
+});
