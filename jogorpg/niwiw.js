@@ -1,5 +1,6 @@
 //essa linha serve para deixar o personagem focado no início do jogo
 document.getElementById("membro1").style.borderColor="red"
+document.getElementById("nometimberth").style.color="red"
 //foco do turno
 let foco = 1
 function mudafoco(){
@@ -11,6 +12,13 @@ function mudafoco(){
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="black"
         document.getElementById("niwiw").style.borderColor="black"
+        document.getElementById("nometimberth").style.color="red"
+        document.getElementById("nomevlad").style.color="black"
+        document.getElementById("nomedemo").style.color="black"
+        document.getElementById("nomespy").style.color="black"
+        document.getElementById("nomesniper").style.color="black"
+        document.getElementById("nomesonic").style.color="black"
+        document.getElementById("nomeniwiw").style.color="black"
         document.getElementById("nome").innerText="Timberth"
     }
     if (foco==2){
@@ -21,6 +29,13 @@ function mudafoco(){
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="black"
         document.getElementById("niwiw").style.borderColor="black"
+        document.getElementById("nometimberth").style.color="black"
+        document.getElementById("nomevlad").style.color="red"
+        document.getElementById("nomedemo").style.color="black"
+        document.getElementById("nomespy").style.color="black"
+        document.getElementById("nomesniper").style.color="black"
+        document.getElementById("nomesonic").style.color="black"
+        document.getElementById("nomeniwiw").style.color="black"
         document.getElementById("nome").innerText="Vlad"
     }
     if (foco==3){
@@ -31,6 +46,13 @@ function mudafoco(){
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="black"
         document.getElementById("niwiw").style.borderColor="black"
+        document.getElementById("nometimberth").style.color="black"
+        document.getElementById("nomevlad").style.color="black"
+        document.getElementById("nomedemo").style.color="red"
+        document.getElementById("nomespy").style.color="black"
+        document.getElementById("nomesniper").style.color="black"
+        document.getElementById("nomesonic").style.color="black"
+        document.getElementById("nomeniwiw").style.color="black"
         document.getElementById("nome").innerText="Demoman"
     }
     if (foco==4){
@@ -41,6 +63,13 @@ function mudafoco(){
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="black"
         document.getElementById("niwiw").style.borderColor="black"
+        document.getElementById("nometimberth").style.color="black"
+        document.getElementById("nomevlad").style.color="black"
+        document.getElementById("nomedemo").style.color="black"
+        document.getElementById("nomespy").style.color="red"
+        document.getElementById("nomesniper").style.color="black"
+        document.getElementById("nomesonic").style.color="black"
+        document.getElementById("nomeniwiw").style.color="black"
         document.getElementById("nome").innerText="Spy"
     }
     if (foco==5){
@@ -51,6 +80,13 @@ function mudafoco(){
         document.getElementById("membro5").style.borderColor="red"
         document.getElementById("membro6").style.borderColor="black"
         document.getElementById("niwiw").style.borderColor="black"
+        document.getElementById("nometimberth").style.color="black"
+        document.getElementById("nomevlad").style.color="black"
+        document.getElementById("nomedemo").style.color="black"
+        document.getElementById("nomespy").style.color="black"
+        document.getElementById("nomesniper").style.color="red"
+        document.getElementById("nomesonic").style.color="black"
+        document.getElementById("nomeniwiw").style.color="black"
         document.getElementById("nome").innerText="Sniper"
     }
     if (foco==6){
@@ -61,6 +97,13 @@ function mudafoco(){
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="red"
         document.getElementById("niwiw").style.borderColor="black"
+        document.getElementById("nometimberth").style.color="black"
+        document.getElementById("nomevlad").style.color="black"
+        document.getElementById("nomedemo").style.color="black"
+        document.getElementById("nomespy").style.color="black"
+        document.getElementById("nomesniper").style.color="black"
+        document.getElementById("nomesonic").style.color="red"
+        document.getElementById("nomeniwiw").style.color="black"
         document.getElementById("nome").innerText="Sonic"
     }
     if (foco==7){
@@ -71,6 +114,13 @@ function mudafoco(){
         document.getElementById("membro5").style.borderColor="black"
         document.getElementById("membro6").style.borderColor="black"
         document.getElementById("niwiw").style.borderColor="red"
+        document.getElementById("nometimberth").style.color="black"
+        document.getElementById("nomevlad").style.color="black"
+        document.getElementById("nomedemo").style.color="black"
+        document.getElementById("nomespy").style.color="black"
+        document.getElementById("nomesniper").style.color="black"
+        document.getElementById("nomesonic").style.color="black"
+        document.getElementById("nomeniwiw").style.color="red"
     }
 };
 //aumenta o medidor de magia do personagem ao atacar
