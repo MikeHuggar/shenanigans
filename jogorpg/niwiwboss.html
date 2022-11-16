@@ -15,59 +15,67 @@
     </script>
     </head>
 	<body>
-        <div class="fundo">
+        <div id="inicio" class="mostra">
+            <h1>Niwiw's Shenanigans</h1>
+            <img src="timberth.png" height="30%" width="25%">
+            <h2 id="start">Iniciar</h2>
+        </div>
+        <div id="fundo" class="esconde">
             <div id="niwiw">
                 <img src="niwiw.png" height="100%" width="100%">
                 <div id="statusniwiw">
-                    <p id="hpniwiw">HP: 40000</p>
+                    <p class="vida" id="hpniwiw">40000</p>
                 </div>
             </div>
+            <audio loop id="niwiwtheme">
+                <source src="./audio/niwiwtheme.mp3">
+            </audio>
             <div id="grupo">
                 <div id="membro1" class="membro">
                     <img src="timberth.png" height="100%" width="100%">
                     <div class="status">
-                        <p id="hptimberth">HP: 8000</p>
-                        <p id="mptimberth">MP: 0%</p>
+                        <p class="vida" id="hptimberth">8000</p>
+                        <p class="mp" id="mptimberth">0%</p>
                     </div>
                 </div>
                 <div id="membro2" class="membro">
                     <img src="vlad.png" height="100%" width="100%">
                     <div class="status">
-                        <p id="hpvlad">HP: 4000</p>
-                        <p id="mpvlad">MP: 0%</p>
+                        <p class="vida" id="hpvlad">4000</p>
+                        <p class="mp" id="mpvlad">0%</p>
                     </div>
                 </div>
                 <div id="membro3" class="membro">
                     <img src="demoman.png" height="100%" width="100%">
                     <div class="status">
-                        <p id="hpdemo">HP: 10000</p>
-                        <p id="mpdemo">MP: 0%</p>
+                        <p class="vida" id="hpdemo">10000</p>
+                        <p class="mp" id="mpdemo">0%</p>
                     </div>
                 </div>
                 <div id="membro4" class="membro">
                     <img src="spy.png" height="100%" width="100%">
                     <div class="status">
-                        <p id="hpspy">HP: 6000</p>
-                        <p id="mpspy">MP: 0%</p>
+                        <p class="vida" id="hpspy">6000</p>
+                        <p class="mp" id="mpspy">0%</p>
                     </div>
                 </div>
                 <div id="membro5" class="membro">
                     <img src="sniper.png" height="100%" width="100%">
                     <div class="status">
-                        <p id="hpsniper">HP: 8000</p>
-                        <p id="mpsniper">MP: 0%</p>
+                        <p class="vida" id="hpsniper">8000</p>
+                        <p class="mp" id="mpsniper">0%</p>
                     </div>
                 </div>
                 <div id="membro6" class="membro">
                     <img src="sonic.png" height="100%" width="100%">
                     <div class="status">
-                        <p id="hpsonic">HP: 6000</p>
-                        <p id="mpsonic">MP: 0%</p>
+                        <p class="vida" id="hpsonic">6000</p>
+                        <p class="mp" id="mpsonic">0%</p>
                     </div>
                 </div>
             </div>
         </div>
-		<div class="painel">
+		<div id="painel" class="esconde">
 				<div id="acao" class="mostra">
                     <h1 id="nome">Timberth</h1>
                     <h2 id="ataque">Ataque</h2>
@@ -164,11 +172,12 @@
                 <div id="gameover" class="esconde">
                     <h1>GAME OVER</h1>
                     <h2>"Better luck next time, Jackasses!"</h2>
+                    <h2 id="retry">Jogar novamente?</h2>
                 </div>
                 <div id="parabens" class="esconde">
-                    <h1>Parece que não foi dessa vez pro Niwiw!</h1>
+                    <h1>Foi uma batalha árdua, mas seus esforços valeram a pena!</h1>
                     <h2>Parabéns!</h2>
-                    <h2>Foi uma batalha árdua, mas seus esforços valeram a pena!</h2>
+                    <h2 id="replay">Jogar novamente?</h2>
                 </div>
         </div>    
         <script src="niwiw.js"></script>    
