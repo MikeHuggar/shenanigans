@@ -305,7 +305,7 @@ class Personagem {
         this.adrenalina = adrenalina;
     }
 }
-let niwiw = {vida:4, chaos: false}
+let niwiw = {vida:40000, chaos: false}
 let timberth = new Personagem(8000, 75, 0, false)
 let vlad = new Personagem(4000, 70, 0, false)
 let demoman = new Personagem(10000, 60, 0, false)
