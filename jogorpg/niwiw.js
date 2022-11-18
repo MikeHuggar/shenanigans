@@ -1,6 +1,37 @@
 //essa linha serve para deixar o personagem focado no início do jogo
 document.getElementById("membro1").style.borderColor="red"
 document.getElementById("nometimberth").style.color="red"
+//variaveis das pontuações
+let point1 = localStorage.getItem("top1")
+let point2 = localStorage.getItem("top2")
+let point3 = localStorage.getItem("top3")
+let pointAtual = 0
+//funçao que substitui as pontuaçoes menores
+function comparaPoint(){
+    if (!point1){
+        point1 = 0
+    }
+    if (!point2){
+        point2 = 0
+    }
+    if (!point3){
+        point3 = 0
+    }
+    if (pointAtual>=point1){
+        point3 = point2
+        point2 = point1
+        point1 = pointAtual
+    }else {
+        if (pointAtual>=point2){
+            point3 = point2
+            point2 = pointAtual
+        } else {
+            if (pointAtual>=point3){
+                point3 = pointAtual
+            }
+        }
+    }
+}
 //foco do turno
 let foco = 1
 function mudafoco(){
@@ -274,7 +305,7 @@ class Personagem {
         this.adrenalina = adrenalina;
     }
 }
-let niwiw = {vida:40000, chaos: false}
+let niwiw = {vida:4, chaos: false}
 let timberth = new Personagem(8000, 75, 0, false)
 let vlad = new Personagem(4000, 70, 0, false)
 let demoman = new Personagem(10000, 60, 0, false)
@@ -353,6 +384,7 @@ document.getElementById("retry").addEventListener("click",function retry(){
     document.getElementById("pocao").innerText = "Poção de cura (x" + item1quant + ")"
     document.getElementById("mana").innerText = "Poção de mana (x" + item2quant + ")"
     furia = 1
+    document.getElementById("niwiwtheme").play();
 });
 document.getElementById("replay").addEventListener("click",function replay(){
     parabens.classList.remove("mostra");
@@ -407,6 +439,7 @@ document.getElementById("replay").addEventListener("click",function replay(){
     document.getElementById("pocao").innerText = "Poção de cura (x" + item1quant + ")"
     document.getElementById("mana").innerText = "Poção de mana (x" + item2quant + ")"
     furia = 1
+    document.getElementById("niwiwtheme").play();
 });
 //acao dos personagens
 //codigo para a funcao de ataques
@@ -1466,10 +1499,23 @@ document.getElementById("proximoturno").addEventListener("click",function mudatu
                 anuncio.classList.remove("esconde");
                 anuncio.classList.add("mostra");
             } else {
+                pointAtual = niwiw.vida*(-1);
+                comparaPoint()
+                localStorage.setItem("top1",point1);
+                localStorage.setItem("top2",point2);
+                localStorage.setItem("top3",point3);
+                document.getElementById("score1").innerText = "TOP 1 PONTOS: " + point1
+                document.getElementById("score2").innerText = "TOP 2 PONTOS: " + point2
+                document.getElementById("score3").innerText = "TOP 3 PONTOS: " + point3
                 acao.classList.remove("mostra");
                 acao.classList.add("esconde");
                 parabens.classList.remove("esconde");
                 parabens.classList.add("mostra");
+                console.log(point1)
+                console.log(point2)
+                console.log(point3)
+                document.getElementById("niwiwtheme").currentTime = 0
+                document.getElementById("niwiwtheme").pause();
             }
         }
     }
@@ -1706,7 +1752,9 @@ document.getElementById("terminaniwiw").addEventListener("click", function termi
         acao.classList.remove("mostra");
         acao.classList.add("esconde");
         gameover.classList.remove("esconde");
-        gameover.classList.add("mostra")
+        gameover.classList.add("mostra");
+        document.getElementById("niwiwtheme").currentTime = 0
+        document.getElementById("niwiwtheme").pause();
     }
     mudafoco()
 });
