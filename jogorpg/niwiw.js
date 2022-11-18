@@ -1492,31 +1492,30 @@ document.getElementById("proximoturno").addEventListener("click",function mudatu
         if(niwiw.chaos==true){
             foco=1
             niwiw.chaos = false
+        }
+        if(niwiw.vida>0){
+            acao.classList.remove("mostra");
+            acao.classList.add("esconde");
+            anuncio.classList.remove("esconde");
+            anuncio.classList.add("mostra");
         } else {
-            if(niwiw.vida>0){
-                acao.classList.remove("mostra");
-                acao.classList.add("esconde");
-                anuncio.classList.remove("esconde");
-                anuncio.classList.add("mostra");
-            } else {
-                pointAtual = niwiw.vida*(-1);
-                comparaPoint()
-                localStorage.setItem("top1",point1);
-                localStorage.setItem("top2",point2);
-                localStorage.setItem("top3",point3);
-                document.getElementById("score1").innerText = "TOP 1 PONTOS: " + point1
-                document.getElementById("score2").innerText = "TOP 2 PONTOS: " + point2
-                document.getElementById("score3").innerText = "TOP 3 PONTOS: " + point3
-                acao.classList.remove("mostra");
-                acao.classList.add("esconde");
-                parabens.classList.remove("esconde");
-                parabens.classList.add("mostra");
-                console.log(point1)
-                console.log(point2)
-                console.log(point3)
-                document.getElementById("niwiwtheme").currentTime = 0
-                document.getElementById("niwiwtheme").pause();
-            }
+            pointAtual = niwiw.vida*(-1);
+            comparaPoint()
+            localStorage.setItem("top1",point1);
+            localStorage.setItem("top2",point2);
+            localStorage.setItem("top3",point3);
+            document.getElementById("score1").innerText = "TOP 1 PONTOS: " + point1
+            document.getElementById("score2").innerText = "TOP 2 PONTOS: " + point2
+            document.getElementById("score3").innerText = "TOP 3 PONTOS: " + point3
+            acao.classList.remove("mostra");
+            acao.classList.add("esconde");
+            parabens.classList.remove("esconde");
+            parabens.classList.add("mostra");
+            console.log(point1)
+            console.log(point2)
+            console.log(point3)
+            document.getElementById("niwiwtheme").currentTime = 0
+            document.getElementById("niwiwtheme").pause();
         }
     }
     mudafoco()
