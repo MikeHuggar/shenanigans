@@ -116,6 +116,12 @@ p{
     #narracao{
         padding-top: 0 !important;
     }
+    #avisomagia{
+        margin-top: -3% !important;
+    }
+    #avisoitem{
+        margin-top: -3%;
+    }
     #grupo{
         margin-top: 1%;
     }
@@ -125,6 +131,24 @@ p{
     #niwiw{
         height: 20%;
         width: 7%;
+    }
+    #congrats{
+        font-size: 2vw !important;
+    }
+    #replay{
+        font-size: 50% !important;
+    }
+    #score1{
+        font-size: 1vw;
+    }
+    #score2{
+        font-size: 1vw;
+    }
+    #score3{
+        font-size: 1vw;
+    }
+    #perdeu{
+        font-size: 1.5vw !important;
     }
 }
 .mostra{
