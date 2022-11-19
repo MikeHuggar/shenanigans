@@ -110,6 +110,22 @@ p{
     .itemmenu{
         font-size: 1vw !important;
     }
+    #nome{
+        font-size: 1.5vw !important;
+    }
+    #narracao{
+        padding-top: 0 !important;
+    }
+    #grupo{
+        margin-top: 1%;
+    }
+    .membro{
+        height: 50% !important;
+    }
+    #niwiw{
+        height: 20%;
+        width: 7%;
+    }
 }
 .mostra{
     display: flex;
