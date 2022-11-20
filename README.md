@@ -1,5 +1,4 @@
-# shenanigans
-Jogo-RPG
+# Niwiw's Shenanigans
 Depois de muito sangue e suor (e lágrimas) aqui está meu breve jogo de rpg em turnos:
 Você controla seis personagens.
 São eles (da esquerda pra direita) Timberth, Vlad, Demoman, Spy, Sniper e o próprio raio azul em... pessoa? ouriço?
