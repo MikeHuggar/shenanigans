@@ -189,7 +189,7 @@ function aumentamagia(){
             document.getElementById("mpspy").innerText = spy.magia + "%"
         } else {
             spy.magia = 100
-            document.getElementById("mpspyh").innerText = spy.magia + "%"
+            document.getElementById("mpspy").innerText = spy.magia + "%"
         }
     }
     if(foco==5){
