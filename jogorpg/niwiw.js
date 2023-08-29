@@ -301,7 +301,7 @@ class Personagem {
     constructor(vida, precisao, magia, adrenalina) {
         this.vida = vida;
         this.precisao = precisao;
-        this. magia = magia;
+        this.magia = magia;
         this.adrenalina = adrenalina;
     }
 }
